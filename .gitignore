@@ -1,0 +1,22 @@
+# Common files to ignore
+.DS_Store
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.idea
+.vscode
+*.log
+*.sqlite
+
+# Compressed files
+*.zip
+*.rar
+*.7zip
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar
+*.gz
+*.bz2
+*.xz
