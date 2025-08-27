@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="276" height="252" viewBox="0 0 276 252" fill="none">
+  <!-- First character (blue) -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0; 0,8; 0,0" dur="4s" repeatCount="indefinite"/>
+    <path d="M197.71 75.5363C200.42 74.3852 203.551 75.6495 204.702 78.3602L227.789 132.728C228.94 135.438 227.675 138.569 224.965 139.72L170.597 162.807C167.887 163.958 164.756 162.693 163.605 159.983L140.518 105.615C139.367 102.905 140.632 99.774 143.342 98.6229L197.71 75.5363Z" fill="#92A6FF"/>
+  
+    <!-- First character eyes with blinking animation -->
+    <circle cx="177.005" cy="112.008" r="4.25699" transform="rotate(38.5985 177.005 112.008)" fill="#111111" stroke="white" stroke-width="1.85298">
+      <animate attributeName="ry" values="4.25699;4.25699;0.8;4.25699;4.25699" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;1;0.3;1;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="193.786" cy="115.455" r="4.25699" transform="rotate(38.5985 193.786 115.455)" fill="#111111" stroke="white" stroke-width="1.85298">
+      <animate attributeName="ry" values="4.25699;4.25699;0.8;4.25699;4.25699" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;1;0.3;1;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  
+    <!-- First character mouth -->
+    <path d="M171.938 121.703C174.814 123.823 183.016 130.546 193.881 126.569" stroke="black" stroke-width="2.17959"/>
+    <circle cx="171.697" cy="121.419" r="1.81738" transform="rotate(38.5985 171.697 121.419)" fill="#FEAB33"/>
+    <circle cx="195.546" cy="126.503" r="2.54433" transform="rotate(38.5985 195.546 126.503)" fill="#FEAB33"/>
+  </g>
+  
+  <!-- Second character (star-shaped, orange) -->
+  <path d="M106.472 94.305C106.881 88.2836 114.924 86.567 117.755 91.897L124.393 104.394C125.912 107.253 129.425 108.392 132.332 106.966L145.037 100.737C150.456 98.08 155.964 104.188 152.764 109.304L145.26 121.301C143.543 124.046 144.314 127.658 147.002 129.463L158.75 137.351C163.76 140.716 161.225 148.54 155.193 148.327L141.052 147.827C137.816 147.712 135.074 150.186 134.855 153.416L133.897 167.534C133.488 173.555 125.445 175.272 122.614 169.942L115.976 157.445C114.457 154.585 110.944 153.447 108.037 154.872L95.3316 161.102C89.9128 163.759 84.4044 157.651 87.6048 152.534L95.1087 140.537C96.8255 137.793 96.0547 134.181 93.367 132.376L81.6193 124.487C76.6089 121.123 79.1441 113.299 85.1755 113.512L99.3172 114.012C102.553 114.126 105.295 111.653 105.514 108.423L106.472 94.305Z" fill="#FEAB33"/>
+  
+  <!-- Second character eyes with blinking animation (offset by 0.3s) -->
+  <circle cx="110.499" cy="126.793" r="4.25699" transform="rotate(6.32239 110.499 126.793)" fill="#111111" stroke="white" stroke-width="1.85298">
+    <animate attributeName="ry" values="4.25699;4.25699;0.8;4.25699;4.25699" dur="2s" begin="1s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;1;0.3;1;1" dur="2s" begin="1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="126.526" cy="120.746" r="4.25699" transform="rotate(6.32239 126.526 120.746)" fill="#111111" stroke="white" stroke-width="1.85298">
+    <animate attributeName="ry" values="4.25699;4.25699;0.8;4.25699;4.25699" dur="2s" begin="1s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;1;0.3;1;1" dur="2s" begin="1s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Second character mouth -->
+  <path d="M111.384 137.698C114.947 137.954 125.473 139.259 132.535 130.094" stroke="black" stroke-width="2.17959"/>
+  <circle cx="111.032" cy="137.585" r="1.81738" transform="rotate(6.32239 111.032 137.585)" fill="#D77121"/>
+  <circle cx="133.909" cy="129.149" r="2.54433" transform="rotate(6.32239 133.909 129.149)" fill="#D77121"/>
+</svg>

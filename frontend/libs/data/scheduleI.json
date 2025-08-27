@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "time": "09:00 AM - 10:00 AM",
+    "title": "Arrival and Registration",
+    "description": ""
+  },
+  {
+    "id": 2,
+    "time": "10:00 AM - 10:30 AM",
+    "title": "Opening Circle and Icebreakers",
+    "description": ""
+  },
+  {
+    "id": 3,
+    "time": "10:30 AM - 11:30 AM",
+    "title": "Word Explorers (English-based session)",
+    "description": "To enhance children's confidence in communication, language use, and creative expression by blending elements of storytelling, writing, debating, and vocabulary games."
+  },
+  {
+    "id": 4,
+    "time": "11:30 AM - 12:30 PM",
+    "title": "Logic Quest (Math Scavenger Hunt)",
+    "description": "To develop logical reasoning, problem-solving, and applied math skills through a team-based scavenger hunt format."
+  },
+  {
+    "id": 5,
+    "time": "12:30 PM - 1:30 PM",
+    "title": "Lunch and Free Exploration",
+    "description": ""
+  },
+  {
+    "id": 6,
+    "time": "1:30 PM - 2:30 PM",
+    "title": "Tech Challenge (Robotics)",
+    "description": "To introduce foundational engineering and logic concepts through physical, hands-on robotics challenges."
+  },
+  {
+    "id": 7,
+    "time": "2:30 PM - 3:00 PM",
+    "title": "SEL Energizer",
+    "description": "To help children reflect, recharge, and build emotional awareness through intentional group-based activities."
+  },
+  {
+    "id": 8,
+    "time": "3:00 PM - 4:00 PM",
+    "title": "Frame by Frame (Animation and Story Art)",
+    "description": "To enable children to translate stories into visual sequences, introducing the basics of animation through drawing, sequencing, and character design."
+  },
+  {
+    "id": 9,
+    "time": "4:00 PM - 5:00 PM",
+    "title": "Team Relay Challenge and Final Task",
+    "description": "To integrate elements from all four stations into a dynamic, fun competition that reinforces learning through action."
+  },
+  {
+    "id": 10,
+    "time": "5:00 PM - 5:30 PM",
+    "title": "Closing Ceremony and Awards",
+    "description": "<ul class=\"list-disc\"><li>Each child receives a participation certificate and feedback on their performance.</li><li>Awards are given for creativity, effort, communication, and team spirit.</li><li>A brief stakeholder reflection and team photo wrap up the event.</li></ul>"
+  }
+]

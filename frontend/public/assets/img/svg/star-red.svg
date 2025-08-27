@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 203 203">
+	<style>
+		@keyframes float {
+		0%, 100% { transform: translateY(0); }
+		50% { transform: translateY(-10px); }
+		}
+		
+		@keyframes blink {
+		0%, 45%, 55%, 100% { transform: scaleY(1); }
+		50% { transform: scaleY(0.1); }
+		}
+		
+		@keyframes smile {
+		0%, 100% { d: path("M90.5091 105.533C94.0059 106.815 104.177 111.15 113.889 103.999"); }
+		50% { d: path("M90.5091 105.533C94.0059 108.815 104.177 113.15 113.889 103.999"); }
+		}
+		
+		@keyframes colorChange {
+		0%, 100% { fill: #E13125; }
+		50% { fill: #FF5742; }
+		}
+		
+		@keyframes pulse {
+		0%, 100% { transform: scale(1); }
+		50% { transform: scale(1.05); }
+		}
+		
+		#star {
+		animation: float 3s ease-in-out infinite, pulse 5s ease-in-out infinite;
+		transform-origin: center;
+		}
+		
+		#starBody {
+		animation: colorChange 5s ease-in-out infinite;
+		}
+		
+		#leftEye, #rightEye {
+		animation: blink 4s infinite;
+		transform-origin: center;
+		}
+		
+		#smile {
+		animation: smile 3s ease-in-out infinite;
+		}
+	</style>
+	<g id="star">
+		<path id="starBody" d="M96.9243 63.7915C99.3933 56.971 109.255 57.6558 110.757 64.752L112.927 74.9988C113.733 78.8055 117.414 81.2858 121.245 80.6035L131.557 78.7667C138.698 77.4946 143.036 86.3772 137.642 91.2267L129.852 98.2292C126.959 100.831 126.651 105.259 129.158 108.235L135.904 116.247C140.576 121.795 135.053 129.993 128.156 127.746L118.197 124.502C114.497 123.297 110.509 125.245 109.184 128.903L105.619 138.752C103.15 145.572 93.2887 144.888 91.7861 137.791L89.6163 127.545C88.8102 123.738 85.1291 121.258 81.2983 121.94L70.9866 123.777C63.8454 125.049 59.5077 116.166 64.9019 111.317L72.691 104.314C75.5846 101.713 75.8921 97.2847 73.3857 94.3084L66.6392 86.2966C61.967 80.7481 67.4907 72.5503 74.3876 74.7971L84.3464 78.0413C88.0461 79.2466 92.0347 77.2988 93.3592 73.6401L96.9243 63.7915Z" fill="#E13125" />
+		<g id="leftEye">
+			<circle cx="92.7525" cy="94.3513" r="4.09855" transform="rotate(22.3412 92.7525 94.3513)" fill="#2D2D2D" stroke="#FFFDFD" stroke-width="2.61" />
+		</g>
+		<g id="rightEye">
+			<circle cx="110.553" cy="92.9035" r="4.09855" transform="rotate(22.3412 110.553 92.9035)" fill="#2D2D2D" stroke="#FFFDFD" stroke-width="2.61" />
+		</g>
+		<path id="smile" d="M90.5091 105.533C94.0059 106.815 104.177 111.15 113.889 103.999" stroke="white" stroke-width="1.89328" />
+		<circle cx="90.1865" cy="105.319" r="1.89454" transform="rotate(22.3412 90.1865 105.319)" fill="#141414" />
+		<circle cx="115.536" cy="103.447" r="2.65235" transform="rotate(22.3412 115.536 103.447)" fill="#141414" />
+	</g>
+</svg>

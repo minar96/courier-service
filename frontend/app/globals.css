@@ -1,1 +1,152 @@
 @import "tailwindcss";
+
+/* Root Variables */
+:root {
+  /* Colors */
+  --royal-blue: #3a5dc4;
+  --fire-red: #ef3220;
+  --teal-green: #51b59f;
+  --amber-yellow: #ffb72c;
+  --primary: #111827;
+  --secondary: #191b1e;
+
+  /* Gradients */
+  --primary-gradient: linear-gradient(175deg, #ff124b 53.86%, #ff9187 95.77%);
+  --disabled-gradient: linear-gradient(175deg, #8f8f8f 53.86%, #8f8f8f 95.77%);
+
+  /* Fonts */
+  --font-mikado: 'Mikado', sans-serif;
+  --font-mikado-regular: 'Mikado-Regular', sans-serif;
+  --font-mikado-medium: 'Mikado-Medium', sans-serif;
+
+  --font-noto-sans: 'NotoSans', sans-serif;
+  --font-noto-sans-regular: 'NotoSans-Regular', sans-serif;
+  --font-noto-sans-medium: 'NotoSans-Medium', sans-serif;
+}
+
+@font-face {
+  font-family: 'Mikado-Regular';
+  src: url('./fonts/mikado/MikadoRegular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Mikado-Medium';
+  src: url('./fonts/mikado/MikadoMedium.woff') format('woff');
+}
+@font-face {
+  font-family: 'Mikado';
+  src: url('./fonts/mikado/MikadoBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NotoSans-Regular';
+  src: url('./fonts/noto_sans/static/NotoSansBengali-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'NotoSans-Medium';
+  src: url('./fonts/noto_sans/static/NotoSansBengali-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'NotoSans';
+  src: url('./fonts/noto_sans/static/NotoSansBengali-Bold.ttf') format('truetype');
+}
+
+
+/* Theming */
+@theme inline {
+  --color-fire-red: var(--fire-red);
+  --color-royal-blue: var(--royal-blue);
+  --color-teal-green: var(--teal-green);
+  --color-amber-yellow: var(--amber-yellow);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+
+  --color-primary-gradient: var(--primary-gradient);
+  --color-disabled-gradient: var(--disabled-gradient);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-fredoka: var(--font-fredoka);
+  --font-garet: var(--font-garet);
+  --font-peace-sans: var(--font-peace-sans);
+  --font-inter: var(--font-inter);
+  --font-bukhari-script: var(--font-bukhari-script);
+}
+
+/* Base Layer Styles */
+@layer base {
+  .logo-text {
+    @apply text-[36px] xl:text-[44px] font-fredoka font-bold leading-[50px] xl:leading-[62px];
+  }
+
+  .footer-social-icon {
+    @apply w-[39px] h-[39px] bg-[#fff] rounded-[39px] flex items-center justify-center;
+  }
+
+  .purpose-bg-gradient {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 28.37%, #000 92.41%);
+  }
+
+  /* Font Utilities */
+  .font-mikado {
+    font-family: var(--font-mikado);
+  }
+  .font-mikado-regular {
+    font-family: var(--font-mikado-regular);
+  }
+  .font-mikado-medium {
+    font-family: var(--font-mikado-medium);
+  }
+
+  .font-noto-sans {
+    font-family: var(--font-noto-sans);
+  }
+  .font-noto-sans-regular {
+    font-family: var(--font-noto-sans-regular);
+  }
+  .font-noto-sans-medium {
+    font-family: var(--font-noto-sans-medium);
+  }
+
+  .custom-yellow-shadow {
+    box-shadow: 2px 7px 0px #FEAB33;
+  }
+
+  .bg-promot {
+    background: url('../public/assets/img/course_details/promot_bg.svg'), linear-gradient(to bottom, #3A5DC4, #3A5DC4) !important;
+  }
+
+  .text-stroke-black {
+    -webkit-text-stroke: 2px black;
+  }
+}
+
+/* Animations */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes turtle-move-forward-back {
+  0%, 100% {
+    transform: scale(1) translateX(0);
+  }
+  50% {
+    transform: scale(1.15) translateX(-10px);
+  }
+}
+
+/* Utilities Layer */
+@layer utilities {
+  .rotate-slow {
+    animation: rotate 20s linear infinite;
+  }
+
+  .turtle-forward-back {
+    animation: turtle-move-forward-back 3s ease-in-out infinite;
+    transform-origin: center;
+  }
+}
