@@ -31,16 +31,16 @@ class UserRoleSeeder extends Seeder
         $admin->assignRole('admin');
 
         // Create Deliveryman
-        $deliveryman = User::firstOrCreate(
-            ['mobile_no' => '01811111111'],
-            [
-                'name' => 'Delivery Man',
-                'mobile_no'   => '01811111111',
-                'password' => Hash::make('password123'),
-                'role_id' => 2,
-            ]
-        );
-        $deliveryman->assignRole('deliveryman');
+        // $deliveryman = User::firstOrCreate(
+        //     ['mobile_no' => '01811111111'],
+        //     [
+        //         'name' => 'Delivery Man',
+        //         'mobile_no'   => '01811111111',
+        //         'password' => Hash::make('password123'),
+        //         'role_id' => 2,
+        //     ]
+        // );
+        // $deliveryman->assignRole('deliveryman');
 
         // // Create Normal User
         // $user = User::firstOrCreate(
