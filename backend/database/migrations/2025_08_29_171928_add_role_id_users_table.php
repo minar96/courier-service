@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('access_token', 255)->nullable()->after('remember_token');
-            $table->string('refresh_token', 255)->nullable()->after('access_token');
-            $table->timestamp('refresh_token_expires_at')->nullable()->after('refresh_token');
+            $table->foreignId('role_id')->after('name')
+            ->nullable()
+            ->constrained('roles')
+            ->nullOnDelete();
         });
     }
 
@@ -24,11 +25,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn([
-                'access_token',
-                'refresh_token',
-                'refresh_token_expires_at'
-            ]);
+            $table->dropForeign(['role_id']);
+            $table->dropColumn('role_id');
         });
     }
 };

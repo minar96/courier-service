@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Role;
 use App\Models\User;
+use App\Models\UserToken;
 use Exception;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -20,7 +22,8 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'mobile_no' => 'required|string|unique:users,mobile_no',
-            'password' => 'required|string|min:6|confirmed'
+            'password' => 'required|string|min:6|confirmed',
+            'role_id' => 'nullable|exists:roles,id'
         ]);
 
         DB::beginTransaction();
@@ -28,19 +31,27 @@ class AuthController extends Controller
             $user = User::create([
                 'name' => $request->name,
                 'mobile_no' => $request->mobile_no,
-                'password' => Hash::make($request->password)
+                'password' => Hash::make($request->password),
+                'role_id' => $request->role_id ?? Role::where('name', 'user')->value('id')
             ]);
 
             $user->assignRole('user'); // default role
 
-            // Auto-login: create access token
+            // Create access token
             $accessToken = $user->createToken('auth_token')->plainTextToken;
 
             // Generate refresh token
             $refreshToken = Str::random(64);
-            $user->update([
+
+            // Save in user_tokens table
+            UserToken::create([
+                'user_id' => $user->id,
+                'access_token' => $accessToken,
                 'refresh_token' => $refreshToken,
-                'refresh_token_expires_at' => now()->addDays(30)
+                'refresh_token_expires_at' => now()->addDays(30),
+                'device_name' => $request->header('User-Agent'),
+                'ip_address' => $request->ip(),
+                'last_used_at' => now()
             ]);
 
             DB::commit();
@@ -53,7 +64,7 @@ class AuthController extends Controller
                     'access_token' => $accessToken,
                     'refresh_token' => $refreshToken,
                     'token_type' => 'Bearer',
-                    'role' => $user->getRoleNames()
+                    'role' => $user->role->name
                 ]
             ], 201);
 
@@ -87,10 +98,16 @@ class AuthController extends Controller
 
             // Generate refresh token
             $refreshToken = Str::random(64);
-            $user->update([
+
+            // Save token in user_tokens
+            UserToken::create([
+                'user_id' => $user->id,
                 'access_token' => $accessToken,
                 'refresh_token' => $refreshToken,
-                'refresh_token_expires_at' => now()->addDays(30)
+                'refresh_token_expires_at' => now()->addDays(30),
+                'device_name' => $request->header('User-Agent'),
+                'ip_address' => $request->ip(),
+                'last_used_at' => now()
             ]);
 
             return response()->json([
@@ -101,7 +118,7 @@ class AuthController extends Controller
                     'access_token' => $accessToken,
                     'refresh_token' => $refreshToken,
                     'token_type' => 'Bearer',
-                    'role' => $user->getRoleNames()
+                    'role' => $user->role->name
                 ]
             ], 200);
 
@@ -123,19 +140,27 @@ class AuthController extends Controller
 
         DB::beginTransaction();
         try {
-            $user = User::where('refresh_token', $request->refresh_token)
-                        ->where('refresh_token_expires_at', '>', now())
-                        ->first();
+            $tokenRecord = UserToken::where('refresh_token', $request->refresh_token)
+                ->where('refresh_token_expires_at', '>', now())
+                ->first();
 
-            if (!$user) {
+            if (!$tokenRecord) {
                 return response()->json(['status' => false, 'message' => 'Invalid or expired refresh token'], 401);
             }
 
-            // Delete current access token
+            $user = $tokenRecord->user;
+
+            // Delete old access token
             $user->currentAccessToken()?->delete();
 
             // Create new access token
             $accessToken = $user->createToken('auth_token')->plainTextToken;
+
+            // Update token record
+            $tokenRecord->update([
+                'access_token' => $accessToken,
+                'last_used_at' => now()
+            ]);
 
             DB::commit();
 
@@ -164,10 +189,8 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         try {
-            // Extract token from the Authorization header
             $token = $request->bearerToken();
 
-            // Handle null pointer reference
             if (!$token) {
                 return response()->json([
                     'status' => false,
@@ -176,20 +199,9 @@ class AuthController extends Controller
                 ], 401);
             }
 
-            // Find the token
             $accessToken = PersonalAccessToken::findToken($token);
 
-                        // Delete refresh token
-            $user = $accessToken->tokenable;
-            $user->update([
-                'access_token' => null,
-                'refresh_token' => null,
-                'refresh_token_expires_at' => null
-            ]);
-
-            // Handle token not found
             if (!$accessToken) {
-                // Return an error response
                 return response()->json([
                     'status' => false,
                     'code' => 401,
@@ -197,17 +209,23 @@ class AuthController extends Controller
                 ], 401);
             }
 
-            // Revoke the token by deleting it
+            $user = $accessToken->tokenable;
+
+            // Delete from user_tokens table
+            UserToken::where('user_id', $user->id)
+                ->where('access_token', $token)
+                ->delete();
+
+            // Delete sanctum token
             $accessToken->delete();
 
-            // Return a success response
             return response()->json([
                 'status' => true,
                 'code' => 200,
                 'message' => 'User logged out successfully !'
             ], 200);
+
         } catch (Exception $e) {
-            // Handle any exceptions
             return response()->json([
                 'status' => false,
                 'code' => 500,
@@ -216,5 +234,4 @@ class AuthController extends Controller
             ], 500);
         }
     }
-
 }

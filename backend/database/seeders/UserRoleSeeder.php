@@ -25,6 +25,7 @@ class UserRoleSeeder extends Seeder
                 'name' => 'Super Admin',
                 'mobile_no'   => '01711111111',
                 'password' => Hash::make('password123'),
+                'role_id' => 1,
             ]
         );
         $admin->assignRole('admin');
@@ -36,19 +37,21 @@ class UserRoleSeeder extends Seeder
                 'name' => 'Delivery Man',
                 'mobile_no'   => '01811111111',
                 'password' => Hash::make('password123'),
+                'role_id' => 2,
             ]
         );
         $deliveryman->assignRole('deliveryman');
 
-        // Create Normal User
-        $user = User::firstOrCreate(
-            ['mobile_no' => '01911111111'],
-            [
-                'name' => 'Test User',
-                'mobile_no'   => '01911111111',
-                'password' => Hash::make('password123'),
-            ]
-        );
-        $user->assignRole('user');
+        // // Create Normal User
+        // $user = User::firstOrCreate(
+        //     ['mobile_no' => '01911111111'],
+        //     [
+        //         'name' => 'Test User',
+        //         'mobile_no'   => '01911111111',
+        //         'password' => Hash::make('password123'),
+        //         'role_id' => 3,
+        //     ]
+        // );
+        // $user->assignRole('user');
     }
 }
