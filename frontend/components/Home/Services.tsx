@@ -95,56 +95,95 @@ const Services = ({ lang, dictionary }: Props) => {
             <div className="rounded-2xl border border-[#d5d5d5] p-6 hover:shadow-lg transition">
                 <div className="flex items-center gap-2 text-lg mb-2">
                 <span className="p-2 rounded-xl bg-[#fde7d6]"><i data-feather="truck"></i></span>
-                    Nationwide Doorstep Delivery
+                    <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Worldwide Doorstep Delivery</span>
                 </div>
-                <p className="text-sm text-zinc-600">Pickup from your shop, deliver to 64 districts & 490+ upazilas.</p>
+                <p className="text-sm text-zinc-600">
+                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Pickup from your shop, deliver to 64 districts & 490+ upazilas.</span>
+                </p>
             </div>
             <div className="rounded-2xl border border-[#d5d5d5] p-6 hover:shadow-lg transition">
                 <div className="flex items-center gap-2 text-lg mb-2">
                 <span className="p-2 rounded-xl bg-[#fde7d6]"><i data-feather="clock"></i></span>
-                Fast COD Settlement
+                <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Fast COD Settlement</span>
+               
                 </div>
-                <p className="text-sm text-zinc-600">Cash within 24-48 hours in major cities (T&C apply).</p>
+                <p className="text-sm text-zinc-600">
+                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Cash within 24-48 hours in major cities (T&C apply).</span>
+                </p>
             </div>
             <div className="rounded-2xl border border-[#d5d5d5] p-6 hover:shadow-lg transition">
                 <div className="flex items-center gap-2 text-lg mb-2">
                 <span className="p-2 rounded-xl bg-[#fde7d6]"><i data-feather="shield"></i></span>
-                Secure Handling
+                <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}> Secure Handling</span>
+               
                 </div>
-                <p className="text-sm text-zinc-600">Smart tracking, verified riders, and safe packaging guidance.</p>
+                <p className="text-sm text-zinc-600">
+                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Smart tracking, verified riders, and safe packaging guidance.</span>
+                </p>
             </div>
             <div className="rounded-2xl border border-[#d5d5d5] p-6 hover:shadow-lg transition">
                 <div className="flex items-center gap-2 text-lg mb-2">
                 <span className="p-2 rounded-xl bg-[#fde7d6]"><i data-feather="calculator"></i></span>
-                Transparent Pricing
+                 <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Transparent Pricing</span>
+                
                 </div>
-                <p className="text-sm text-zinc-600">Live rate calculator with no hidden fees.</p>
+                <p className="text-sm text-zinc-600">
+                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Live rate calculator with no hidden fees.</span>
+                    
+                </p>
             </div>
         </div>
-         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="flex items-end justify-between mb-6">
-                    <h2 className="text-2xl md:text-3xl font-bold">Services & Rates</h2>
-                    <button className="hidden md:flex bg-transparent border rounded px-4 py-2">Download Rate Card</button>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[44px] 2xl:mt-[120px] xl:mt-[120px] lg:mt-[120px] md:mt-[120px]">
+            <div className="flex items-end justify-between mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold">
+                    
+                    <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Services & Rates</span>
+                </h2>
+                {/* <button className="hidden md:flex bg-transparent border rounded px-4 py-2">Download Rate Card</button> */}
+            </div>
+            <div className="grid md:grid-cols-4 gap-4">
+                <div className="rounded-2xl border border-[#d5d5d5] p-6">
+                <h3 className="mb-2">
+                   
+                    <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Inside City</span>
+                </h3>
+                <p className="text-sm text-zinc-600">
+                    
+                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Same/next-day delivery within metro areas.</span>
+                </p>
                 </div>
-                <div className="grid md:grid-cols-4 gap-4">
-                    <div className="rounded-2xl border p-6">
-                    <h3 className="font-semibold mb-2">Inside City</h3>
-                    <p className="text-sm text-zinc-600">Same/next-day delivery within metro areas.</p>
-                    </div>
-                    <div className="rounded-2xl border p-6">
-                    <h3 className="font-semibold mb-2">Suburb & Upazila</h3>
-                    <p className="text-sm text-zinc-600">Reliable routes connecting suburban customers.</p>
-                    </div>
-                    <div className="rounded-2xl border p-6">
-                    <h3 className="font-semibold mb-2">Nationwide</h3>
-                    <p className="text-sm text-zinc-600">Door-to-door across Bangladesh.</p>
-                    </div>
-                    <div className="rounded-2xl border p-6">
-                    <h3 className="font-semibold mb-2">Reverse Logistics</h3>
-                    <p className="text-sm text-zinc-600">Easy returns & exchanges for your store.</p>
-                    </div>
+                <div className="rounded-2xl border border-[#d5d5d5] p-6">
+                <h3 className="mb-2">
+                    
+                    <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Suburb & Upazila</span>
+                </h3>
+                <p className="text-sm text-zinc-600">
+                   
+                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>  Reliable routes connecting suburban customers.</span>
+                </p>
+                </div>
+                <div className="rounded-2xl border border-[#d5d5d5] p-6">
+                <h3 className="mb-2">
+                    
+                    <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Nationwide</span>
+                </h3>
+                <p className="text-sm text-zinc-600">
+                   
+                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>  Door-to-door across Bangladesh.</span>
+                </p>
+                </div>
+                <div className="rounded-2xl border border-[#d5d5d5] p-6">
+                <h3 className="mb-2">
+                   
+                     <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}> Reverse Logistics</span>
+                </h3>
+                <p className="text-sm text-zinc-600">
+                    
+                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Easy returns & exchanges for your store.</span>
+                    </p>
                 </div>
             </div>
+        </div>
     </Wrapper>
     
   );

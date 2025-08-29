@@ -3,12 +3,11 @@ import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
 import HomeHero from "@/components/Home/HomeHero";
 import Services from "@/components/Home/Services";
-import ChildsProgress from "@/components/Home/ChildsProgress";
-import CourseCategory from "@/components/Home/CourseCategory";
-import CapturingMoment from "@/components/Home/CapturingMoment";
-import KiddozWork from "@/components/Home/KiddozWork";
-import Event from "@/components/Home/Event";
+import HowItWorks from "@/components/Home/HowItWorks";
+import Coverage from "@/components/Home/Coverage";
 import Testimonial from "@/components/Home/Testimonial";
+import StartShipping from "@/components/Home/StartShipping";
+import Event from "@/components/Home/Event"
 import Faq from "@/components/Home/Faq";
 
 
@@ -24,30 +23,19 @@ const HomePage = async (props: { params: Promise<{ lang: Locale }> }) => {
       <div id="homeServices" className="w-full bg-[#FFF]">
         <Services lang={lang} dictionary={dictionary}/>
       </div>
-      <div id="homeChildsProgress" className="w-full bg-[#FFF]">
-        <ChildsProgress lang={lang} dictionary={dictionary} />
+      <div id="homeHowItWorks" className="w-full bg-[#0f172a]">
+        <HowItWorks lang={lang} dictionary={dictionary} />
       </div>
-      <div id="homeCourseCategory" className="w-full bg-[#D8F6FF]">
-        <CourseCategory lang={lang} dictionary={dictionary}/>
+      <div id="homeCoverage" className="w-full bg-[#FFF]">
+        <Coverage lang={lang} dictionary={dictionary}/>
       </div>
-      <div id="homeCapturingMoment" className="w-full bg-[#FFF]">
-        <CapturingMoment lang={lang} dictionary={dictionary} />
+      <div id="homeTestimonial" className="w-full bg-[#FFF]">
+        <Testimonial lang={lang} dictionary={dictionary} />
       </div>
-      <div id="homeKiddozWork" className="w-full bg-[#FFF]">
-        <KiddozWork lang={lang} dictionary={dictionary} />
+      <div id="homeStartShipping" className="w-full bg-[#0e1b2a]">
+        <StartShipping lang={lang} dictionary={dictionary} />
       </div>
-      <div id="homeEvent" className="w-full bg-[#FFF]">
-        <Event lang={lang} dictionary={dictionary} />
-      </div>
-      {/* <div id="homeTestimonial" className="w-full bg-[#51B59F]">
-        <Testimonial />
-      </div> */}
-      <div
-        id="homeFaq"
-        className="w-full bg-[#FFF4E3] mt-[44px] 2xl:mt-[120px] xl:mt-[120px] lg:mt-[120px] md:mt-[120px]"
-      >
-        <Faq lang={lang} dictionary={dictionary} />
-      </div>
+      
     </>
   );
 };
