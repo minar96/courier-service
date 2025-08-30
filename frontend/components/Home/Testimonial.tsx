@@ -129,7 +129,7 @@ const Testimonial = ({ lang, dictionary }: Props) => {
                 </div> */}
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex items-end justify-between mb-6">
-                    <h2 className="text-2xl md:text-3xl font-bold">Loved by merchants</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold">{dictionary.testimonial.title}</h2>
                     <div className="flex gap-1">
                     <i data-feather="star" className="w-4 h-4"></i>
                     <i data-feather="star" className="w-4 h-4"></i>
@@ -140,24 +140,24 @@ const Testimonial = ({ lang, dictionary }: Props) => {
                 </div>
                 <div className="mt-6 grid md:grid-cols-3 gap-4">
                     <div className="rounded-2xl border border-[#d5d5d5] p-6 text-zinc-700">
-                        <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> “Their COD speed and tracking cut our support calls by half. Sales went up in 2 weeks!”</span>
+                        <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> {dictionary.testimonial.quote1}</span>
                        
                     <div className="mt-4 text-sm text-zinc-500">
-                        <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> — Ayesha, Fashion Retailer</span>
+                        <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> {dictionary.testimonial.qoute1Name}</span>
                     </div>
                     </div>
                     <div className="rounded-2xl border border-[#d5d5d5] p-6 text-zinc-700">
-                        <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>  “Rates are clear, pickups are on time, and we love the merchant panel UI.”</span>
+                        <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>  {dictionary.testimonial.quote2}</span>
                        
                     <div className="mt-4 text-sm text-zinc-500">
-                        <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> — Rahim, Gadget Store</span>
+                        <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.testimonial.qoute2Name}</span>
                     </div>
                     </div>
                     <div className="rounded-2xl border border-[#d5d5d5] p-6 text-zinc-700">
                         
-                        <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> “Deliveries to remote upazilas made our Facebook campaigns profitable again.”</span>
+                        <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.testimonial.quote3}</span>
                     <div className="mt-4 text-sm text-zinc-500">
-                        <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> — Nafisa, Home Decor</span>
+                        <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> {dictionary.testimonial.qoute3Name}</span>
                     </div>
                     </div>
                 </div>

@@ -158,31 +158,31 @@ const Coverage = ({ lang, dictionary }: Props) => {
                     <div>
                         <h2 className="text-2xl md:text-3xl font-bold">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Worldwide coverage</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>{dictionary.coverage.title}</span>
                         </h2>
                         <p className="mt-3 text-zinc-600 max-w-xl">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> From Dhaka to the foreign cities with partner hubs and verified riders.</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.coverage.subTitle}</span>
                         </p>
                         <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-3">
                         <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Singapure</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> {dictionary.coverage.country1}</span>
                         </div>
                         <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> China</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> {dictionary.coverage.country2}</span>
                         </div>
                         <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Europe</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> {dictionary.coverage.country3}</span>
                         </div>
                         <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> America</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> {dictionary.coverage.country4}</span>
                         </div>
                         <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Canada</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> {dictionary.coverage.country5}</span>
                         </div>
                         <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Australia</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> {dictionary.coverage.country6}</span>
                         </div>
                         </div>
                     </div>

@@ -123,50 +123,50 @@ const HowItWorks = ({ lang, dictionary }: Props) => {
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white">
                     <h2 className="text-2xl md:text-3xl font-bold mb-6">
                        
-                        <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>How it works</span>
+                        <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>{dictionary.howitwork.maintitle}</span>
                     </h2>
                     <div className="grid md:grid-cols-4 gap-4">
                         <div className="rounded-2xl p-6 bg-white/5 border border-white/10">
                         <div className="text-4xl font-black text-[#ff7a00]">1</div>
                         <div className="mt-2 font-medium">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Create order</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>{dictionary.howitwork.title1}</span>
                         </div>
                         <p className="text-sm text-zinc-300 mt-1">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Book from web or mobile in seconds.</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.howitwork.subTitle1}</span>
                         </p>
                         </div>
                         <div className="rounded-2xl p-6 bg-white/5 border border-white/10">
                         <div className="text-4xl font-black text-[#ff7a00]">2</div>
                         <div className="mt-2 font-medium">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>We pick up</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>{dictionary.howitwork.title2}</span>
                         </div>
                         <p className="text-sm text-zinc-300 mt-1">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Rider arrives at your address for pickup.</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.howitwork.subTitle2}</span>
                         </p>
                         </div>
                         <div className="rounded-2xl p-6 bg-white/5 border border-white/10">
                         <div className="text-4xl font-black text-[#ff7a00]">3</div>
                         <div className="mt-2 font-medium">
                            
-                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}> We deliver</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}> {dictionary.howitwork.title3}</span>
                         </div>
                         <p className="text-sm text-zinc-300 mt-1">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Customer gets updates & tracking link.</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.howitwork.subTitle3}</span>
                         </p>
                         </div>
                         <div className="rounded-2xl p-6 bg-white/5 border border-white/10">
                         <div className="text-4xl font-black text-[#ff7a00]">4</div>
                         <div className="mt-2 font-medium">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Payment</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>{dictionary.howitwork.title4}</span>
                         </div>
                         <p className="text-sm text-zinc-300 mt-1">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Settled to your bank or MFS.</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.howitwork.subTitle4}</span>
                         </p>
                         </div>
                     </div>

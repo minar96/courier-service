@@ -17,9 +17,20 @@ const HomePage = async (props: { params: Promise<{ lang: Locale }> }) => {
   const dictionary = await getDictionary(lang);
   return (
     <>
-      <div id="homeHero" className="w-full bg-gradient-to-t from-[#fde7d6] to-white">
-        <HomeHero lang={lang} dictionary={dictionary} />
-      </div>
+      <div
+  id="homeHero"
+  className="relative w-full bg-[url('/assets/img/home/home-bg.png')] bg-center bg-cover bg-no-repeat"
+>
+  {/* Gradient overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-[#fde7d6] to-white opacity-75"></div>
+
+  {/* Content */}
+  <div className="relative z-10">
+    <HomeHero lang={lang} dictionary={dictionary} />
+  </div>
+</div>
+
+
       <div id="homeServices" className="w-full bg-[#FFF]">
         <Services lang={lang} dictionary={dictionary}/>
       </div>

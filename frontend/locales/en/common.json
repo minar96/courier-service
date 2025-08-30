@@ -1,290 +1,5 @@
 {
-  "HomeHero": {
-    "title": "Courier for ambitious Bangladeshi merchants",
-    "subTitle": "Easy pickups, real-time tracking, and fast COD settlement. Scale your e‑commerce with a logistics partner built for growth.",
-    "learningBtn": "Start Learning"
-  },
-  "services":{
-    "title":"What Makes Kiddoz Special?",
-    "usp1Title":"Cambridge Curriculum",
-    "usp1SubTitle":"Aligned with the global Cambridge English YLE framework.",
-
-    "usp2Title":"Official Cambridge Materials",
-    "usp2SubTitle":"Books and digital tools from Cambridge Publications.",
-
-    "usp3Title":"Play-Based Learning",
-    "usp3SubTitle":"Fun, interactive activities that make learning joyful.",
-
-    "usp4Title":"Guardian Student Learning Activities",
-    "usp4SubTitle":"Home practice modules for meaningful parent engagement."
-  },
-  "ChildProgress": {
-    "title":"Three Steps for Tracking Your Child's Progress",
-    "stepOneTitle":"Give a Basic Level Check Test",
-    "stepOneSubTitle":"Start with a simple test to understand your child’s current level in subjects like English or Math.",
-    "stepTwoTitle":"Review the Results with Teachers",
-    "stepTwoSubTitle":"Discuss the test results with teachers to identify strengths and areas that need support.",
-    "stepThreeTitle":"Plan the Next Learning Steps",
-    "stepThreeSubTitle":"Use the level check results to create a study plan that fits your child’s needs and helps them improve."
-  },
-  "CapturingMoments":{
-    "title":"Capturing Moments of Joy and Learning"
-  },
-  "KiddozWork":{
-    "title":"How Kiddoz Work",
-    "subTitle": "A safe space where kids explore, express, and experiment.",
-    "railLineImg":"/assets/img/home/railline.svg",
-    "part1":"/assets/img/home/path-01-fill.svg",
-    "part2":"/assets/img/home/path-02-fill.svg",
-    "part3":"/assets/img/home/path-03-fill.svg",
-    "part4":"/assets/img/home/path-04-fill.svg",
-    "part5":"/assets/img/home/path-05-fill.svg",
-    "part6":"/assets/img/home/path-06-fill.svg",
-    "part1bangla":"/assets/img/home/path-01-fill-mobile.svg",
-    "part2bangla":"/assets/img/home/path-02-fill-mobile.svg",
-    "part3bangla":"/assets/img/home/path-03-fill-mobile.svg",
-    "part4bangla":"/assets/img/home/path-04-fill-mobile.svg",
-    "part5bangla":"/assets/img/home/path-05-fill-mobile.svg",
-    "part6bangla":"/assets/img/home/path-06-fill-mobile.svg"
-  },
-  "Event":{
-    "title":"Events & Workshops",
-    "subTitle": "Our kids' events and workshops blend fun and learning through art, science, storytelling, and play. Each session sparks curiosity, builds confidence, and helps children explore their creativity in a joyful, supportive environment.",
-    "button": "See Details"
-  },
-  "HomeFAQ":[
-    {
-      "id": 1,
-      "title": "What is Kiddoz?",
-      "description": "Kiddoz is a fun learning platform for kids aged 6 to 12 to build skills and learn languages through play."
-    },
-    {
-     "id": 2,
-      "title": "How is Kiddoz different from regular school?",
-      "description": "We focus on learning through games, creativity, and real-life skills, not just books. Our Classrooms are pressure-free zones filled with laughter, storytelling, engaging activities, and meaningful discoveries."
-    },
-    {
-      "id": 3,
-      "title": "Can kids from good English schools join?",
-      "description": "Absolutely. Kiddoz supplements school learning by focusing on practical communication skills, creativity, and real-world application to build well-rounded confidence."
-    },
-    {
-      "id": 4,
-      "title": "What extra benefits will my child get from learning at Kiddoz?",
-      "description": "Before joining any program, your child can take a free assessment. Parenting tips for Kids and free library access for students."
-    },
-    {
-      "id": 5,
-      "title": "How do I enrol my child?",
-      "description": "You can sign up through our website or reach out via phone or social media to consult with our counselors. They’ll help you schedule an office visit and a free assessment. You’re also welcome to visit our office directly for enrollment."
-    }
-  ],
-  "Faq":{
-    "title": "FAQs"
-  },
-  "CourseDetailsHero":{
-    "decripttionPreA1": "Help your child take their first steps in English! Fun lessons, friendly teachers, and playful learning designed for young learners.",
-    "descriptionA1Mover":"Help your child take their first steps in English! Fun lessons, friendly teachers, and playful learning designed for young learners.",
-    "descriptionA2Flyer":"Help your child take their first steps in English! Fun lessons, friendly teachers, and playful learning designed for young learners."
-  },
-  "CourseDefinationPreA1":{
-    "title":"What is Pre A1 Starters?",
-    "DefinitionPart1":"Pre A1 Starters, formerly known as Cambridge English: Starters, is the entry-level qualification in the Cambridge English Young Learners (YLE) suite. It is specially designed for young children who are just beginning to learn English.",
-    "DefinitionPart2":"This course introduces English in a gentle, playful, and highly engaging way, helping children feel comfortable and confident with the language from the very start."
-  },
-  "CourseDefinationA1Mover":{
-    "title":"What is A1 Movers?",
-    "DefinitionPart1":"A1 Movers, previously known as Cambridge English: Movers, is the second level of the internationally recognized Cambridge YLE (Young Learners English) program. This course is designed to take children beyond the basics and help them develop real communicative skills in English in a fun, supportive, and structured way.",
-    "DefinitionPart2":"It prepares learners to understand and use English in everyday situations, helping them become confident users of basic language — both in and out of the classroom."
-  },
-  "CourseDefinationA2Flyers":{
-    "title":"What is A2 Flyers?",
-    "DefinitionPart1":"A2 Flyers, previously known as Cambridge English: Flyers, is the highest level in the Cambridge Young Learners English (YLE) program. It marks the transition from beginner to early-intermediate English proficiency. This course is designed to build fluency and confidence so that children can handle everyday English communication with ease — both in academic and real-life situations.",
-    "DefinitionPart2":"At this level, students develop a strong foundation in grammar, vocabulary, comprehension, and expression, preparing them for more rigorous programs like Cambridge A2 Key (KET) and beyond."
-  },
-  "CourseObjective":{
-    "title":"Course Objectives:",
-    "subTitle":"We help children learn English playfully—greeting, describing, and speaking in simple sentences with ease.",
-    "listPreA1":[
-        "Build a positive attitude toward English learning",
-        "Develop early communication skills in listening, speaking, reading, and writing",
-        "Learn essential vocabulary and structures in real-life contexts",
-        "Prepare children for A1 Movers, the next level in the YLE journey"
-    ],
-    "listA1Mover":[
-        "Strengthen core English language skills: Listening, Speaking, Reading & Writing",
-        "Develop the ability to communicate simple ideas effectively",
-        "Expand vocabulary and sentence structure",
-        "Prepare learners for A2 Flyers, the final level of the YLE program",
-        "Build independent learning habits through engaging activities"
-    ],
-    "listA2Flyer":[
-        "Use English confidently in practical, real-life contexts",
-        "Strengthen skills in storytelling, description, and opinion sharing",
-        "Improve reading comprehension and writing fluency",
-        "Develop advanced listening and speaking strategies",
-        "Prepare children for a smooth transition into teenage-level English programs"
-    ]
-  },
-  "CourseChildLearn":{
-    "title":"What Will Children Learn?",
-    "subTitlePreA1": "The course content is designed around topics familiar to young children, such as:",
-    "subTitleA1Mover": "The A1 Movers course introduces and practices language through familiar topics such as:",
-     "subTitleA2Flyer": "The A2 Flyers curriculum is built around meaningful, age-appropriate themes such as:"
-  },
-  "ChildWillLearn":{
-     "title":"Children will learn to",
-     "listPreA1":[
-          "Understand simple instructions",
-          "Identify words and match them with pictures",
-          "Answer basic questions about themselves",
-          "Complete basic sentences",
-          "Speak short phrases using correct pronunciation"
-    ],
-    "listA1Mover":[
-          "Read and understand short stories and conversations",
-          "Write simple sentences and short paragraphs",
-          "Answer questions and describe events",
-          "Listen to and follow instructions and narratives",
-          "Speak about their interests, surroundings, and activities"
-    ],
-    "listA2Flyer":[
-          "Understand longer and more complex dialogues or texts",
-          "Write short stories and emails",
-          "Ask and answer questions fluently",
-          "Describe experiences using correct tenses and vocabulary",
-          "Use English in group discussions and presentations"
-    ]
-  },
-  "HowTeach":{
-    "title":"How We Teach at Kiddoz",
-    "subTitle":"We use a gamified and immersive approach to make the learning experience exciting and impactful:",
-    "listPreA1":[
-        "Interactive games and roleplays",
-        "Colorful visuals and real-life objects",
-        "Cambridge-endorsed books and materials",
-        "Songs, stories, and chants for language retention",
-        "Regular progress tracking and feedback"
-    ],
-    "listA1Mover":[
-        "Language games and storytelling",
-        "Flashcards, songs, and visual aids",
-        "Cambridge-endorsed textbooks and worksheets",
-        "Roleplays and pair speaking tasks",
-        "Ongoing feedback and personalized support"
-    ],
-    "listA2Flyer":[
-        "Group projects and real-life simulations",
-        "Creative writing and storytelling labs",
-        "Audio-based tasks to build strong listening skills",
-        "Speaking workshops to build fluency and clarity",
-        "Blended learning with our exclusive AI-based Learning Portal",
-        "Progress monitoring and individualized support"
-    ]
-  },
-  "WhyKiddozPreA1":{
-    "title":"Why Pre A1 Starters at Kiddoz?",
-    "subTitle": "Kiddoz offers expert guidance, playful lessons, and a trusted Cambridge-based approach—perfect for building your child’s English foundation with confidence.",
-    "image":"/assets/img/course_details/why_kidoz_a1.svg",
-    "phoneImage":"/assets/img/course_details/why_kidoz_a1_phone.svg"
-  },
-  "WhyKiddozA1Movers":{
-    "title":"Why A1 Movers at Kiddoz",
-    "subTitle": "Kiddoz offers expert guidance, playful lessons, and a trusted Cambridge-based approach—perfect for building your child’s English foundation with confidence.",
-    "image":"/assets/img/course_details/why_kidoz_a1.svg",
-    "phoneImage":"/assets/img/course_details/why_kidoz_a1_phone.svg"
-  },
-  "WhyKiddozA2Flyer":{
-    "title":"Why A2 Flyers at Kiddoz",
-    "subTitle": "Kiddoz offers expert guidance, playful lessons, and a trusted Cambridge-based approach—perfect for building your child’s English foundation with confidence.",
-    "image":"/assets/img/course_details/why_kidoz_a1.svg",
-    "phoneImage":"/assets/img/course_details/why_kidoz_a1_phone.svg"
-  },
-  "CoursePromotPreA1":{
-    "title":"Let your children begin their English journey with joy, creativity, and confidence.",
-    "button": "Enroll in Kiddoz Pre A1 Starters course today!"
-  },
-  "CoursePromotA1Movers":{
-    "title":"Help your child become a confident young communicator in English.",
-    "button": "Enrollment now open"
-  },
-  "CoursePromotA2Flyer":{
-    "title":"With A2 Flyers at BARC, they’re not just learning English — they’re learning to use it.",
-    "button": "Enrollment now open"
-  },
-  "CourseRecommanded":{
-    "title":"Recommended Course"
-  },
-  "SkillFocus":{
-    "title":"Skill-wise Focus",
-    "subTitle":"We build listening, speaking, reading, and writing skills through fun, age-appropriate activities.",
-    "listPreA1":[
-      {
-        "title": "Listening",
-        "description":
-          "Listen and choose correct pictures, follow simple instructions"
-      },
-      {
-        "title": "Speaking",
-        "description":
-          "Name objects, answer personal questions, describe a picture"
-      },
-      {
-        "title": "Reading & Writing",
-        "description":
-          "Match words to pictures, spell basic words, complete simple sentences"
-      }
-    ],
-    "listA1Mover":[
-      {
-        "title": "Listening",
-        "description":
-          "Identify information from short dialogues, follow instructions, understand a story"
-      },
-      {
-        "title": "Speaking",
-        "description":
-          "Answer personal and picture-based questions, describe scenes, talk about past actions"
-      },
-      {
-        "title": "Reading & Writing",
-        "description":
-          "Read short texts, match sentences to pictures, write short responses, complete stories"
-      }
-    ],
-    "listA2Flyer":[
-      {
-        "title": "Listening",
-        "description":
-          "Understand factual information in conversations and instructions"
-      },
-      {
-        "title": "Speaking",
-        "description":
-          "Describe stories, answer personal and imaginative questions, use more accurate grammar"
-      },
-      {
-        "title": "Reading & Writing",
-        "description":
-          "Read longer passages, write connected sentences, complete email replies, short stories"
-      }
-    ]
-  },
-  "AboutKiddoz":{
-    "title":"About"
-  },
-  "AboutDetails":{
-    "subTitle":"About Us",
-    "title":"Welcome to Kiddoz – Excellence in Learning",
-    "description":"Kiddoz is a fun learning world designed for children aged 6 to 12, where learning happens naturally through play, exploration, and creativity. Here, children are encouraged to think freely, express themselves, and grow with confidence. After establishing BARC as the leading platform for IELTS, we are now passionately expanding our vision through Kiddoz—to nurture young minds and empower children to play, learn, and succeed with confidence."
-  },
-  "AboutMissionVision":{
-    "visionTitle":"Our core vision",
-    "missionTitle":"Our main mission",
-    "visionDescription":"To be the most trusted fun learning platform for children, where play fuels curiosity, learning builds capability, and success becomes a celebration of growth—empowering every child to thrive in school and beyond.",
-    "missionDescription":"To create a playful and inspiring world where children play freely, learn joyfully, and succeed confidently through hands-on experiences, language mastery, and essential life skills."
-  },
-  "headerMenu": {
+    "headerMenu": {
       "home": "Home",
       "course": "Tracking",
       "about": "Service",
@@ -292,49 +7,79 @@
       "login": "Login",
       "account":"Open Account"
     },
-    "HomeEvent":{
-      "subtitle":"Memorable experience",
-      "basecamp":"Unforgotteable moments at basecamp 2025",
-      "gamified":"Gamified Learning",
-      "activities":"Activities",
-      "summerDayTitle":"Summer Fun Day",
-      "description":"From messy art sessions to science magic and storytelling, our events are designed to spark joy, learning, and confidence in every child."
-    },
-    "HomeCourseCategory":{
-      "preA1SubTitle":"Kickstart your child’s English journey with quality, joy, and playful learning where friendly teachers and fun classes make every moment count!",
-      "A1MoverSubTitle":"Give your child the next boost in learning! This course develops vocabulary, sentence formation, and self-expression skills—all in a playful, story-based, and enjoyable setting.",
-      "A2FlyerSubTitle":"Your child will now take a leap toward mastery! With clearer thinking and expression, they’ll communicate effectively in English—across all skills, through dynamic and exciting lessons."
-    },
-    "footerNav":{
-      "title":" Making learning fun and easy for kids through play and exploration. Join us to spark confidence and curiosity in every child!",
-      "serviceTitle":"Our Services",
-      "home":"Home",
-      "course":"Course",
-      "linkTitle":"Useful links",
-      "about": "About us",
-      "policy":"Privacy policy",
-      "contact":"Contact us",
-      "terms":"Terms of service"
-    },
-    "summercamp":{
-      "mainTitle1":"Brain Voyage Outdoor",
-      "mainTitle2":"Day Camp",
-      "subTitle":"Brain Voyage is a day-long gamified event with hands-on experience where your kids speak, create, build, and explore!",
-      "heroBtn":"Join Now",
-      "locationTitle":"Location",
-      "locationSubTitle":"Gazipur BaseCamp – nature, fun, and learning all in one place!",
-      "locationBtn": "Register",
-      "ageTitle":"Age",
-      "ageSubTitle":"Fun English Outdoor Camp for ages 6–13! Learn through games, activities, and adventure!",
-      "durationTitle":"Duration",
-      "durationSubTitle":"Camp Hours: 9:30 AM – 5:30 PM. Full day of fun, learning, and adventure!",
-      "purposeEventTitle":"Purpose of the Event",
-      "purposeEventSubTitle":"Brain Voyage is designed as a one-day immersive learning experience that reflects the core philosophy of Kiddoz: hands-on, curiosity-driven learning with real-world relevance. The goal is to give children a chance to explore communication, creativity, technology, and logic in a playful yet purposeful format. Each activity is built around a core learning theme and designed to leave a lasting impact on skill development, collaboration, and self-expression.",
-      "purposeEventPart1Title":"Unforgettable Moments at Basecamp 2025",
-      "purposeEventPart2Title":"Gamified Learning",
-      "purposeEventPart3Title":"Activities",
-      "purposeEventPartSubTitle":"Memorable experience",
-      "scheduleTitle1":"Schedule",
-      "scheduleTitle2":"Overview"
-    }
+  "HomeHero": {
+    "title": "Fast and Reliable Courier & Logistics Across the Globe",
+    "subTitle": "Seamlessly delivering parcels, documents, and freight with speed, security, and trust wherever you need, worldwide",
+    "learningBtn": "Ship your percel",
+    "tracktile": "Track your parcel"
+  },
+  "services":{
+    "title1":"Worldwide Doorstep Delivery Service",
+    "subTitle1":"Pickup from your address, deliver to Asia, Europe and USA.",
+    "title2":"Fast Settlement",
+    "subTitle2":"Reached within 72 hours in major cities (T&C apply).",
+    "title3":"Secure Handling",
+    "subTitle3":"Smart tracking, verified riders, and safe packaging guidance.",
+    "title4":"Transparent Pricing",
+    "subTitle4":"Live rate calculator with no hidden fees.",
+    "rateMainTitle": "Services and Rates",
+    "title5":"Inside City",
+    "subTitle5":"7 days delivery within metro areas.",
+    "title6":"Suburb",
+    "subTitle6":"Reliable routes connecting suburban customers.",
+    "title7":"Worldwide",
+    "subTitle7":"Door-to-door across the world.",
+    "title8":"Reverse Logistics",
+    "subTitle8":"Easy returns & exchanges for your store."
+  },
+  "howitwork":{
+    "maintitle":"How it works",
+    "title1":"Create order",
+    "subTitle1":"Book from web or mobile in seconds.",
+    "title2":"We pick up",
+    "subTitle2":"Rider arrives at your address for pickup.",
+    "title3":"We deliver",
+    "subTitle3":"Customer gets updates & tracking link.",
+    "title4":"Payment",
+    "subTitle4":"Settled to your bank or MFS."
+  },
+  "coverage":{
+    "title":"Worldwide coverage",
+    "subTitle":"From Dhaka to the foreign cities with partner hubs and verified riders.",
+    "country1":"Singapure",
+    "country2":"China",
+    "country3":"Europe",
+    "country4":"America",
+    "country5":"Canada",
+    "country6":"অস্ট্রেলিয়া"
+  },
+  "testimonial":{
+     "title":"Loved by Client",
+     "quote1":"Fast and reliable service! My parcel reached Europe within 7 days without any issues. Highly recommend!",
+     "qoute1Name":"Johirul Islam",
+      "quote2":"Excellent customer support and tracking system. I could follow my package every step of the way.",
+     "qoute2Name":"Sojib Khan",
+      "quote3":"Affordable rates and secure delivery. I trust them for all my international shipments.",
+     "qoute3Name":"Minar Ahmed"
+  },
+   "startShiping":{
+     "title":"Start shipping today",
+     "subTitle":"Create a free account in minutes. No setup fees, no commitments.",
+     "account":"Open Account",
+     "order":"Ship your percel"
+  },
+  "footer":{
+    "title":"DeliverX",
+    "subTitle":"Bangladesh’s fastest growing courier service for customer.",
+    "product":"Products",
+    "product1":"Shipment",
+    "product2":"Rate Calculator",
+     "company":"Company",
+     "company1":"About",
+     "company2":"Contact",
+     "support":"Support",
+     "support1":"Help Center",
+     "support2":"FAQ",
+     "suppert3":"Terms"
+  }
 }
