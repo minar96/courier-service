@@ -144,7 +144,7 @@ const HowItWorks = ({ lang, dictionary }: Props) => {
                         </div>
                         <p className="text-sm text-zinc-300 mt-1">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Rider arrives at your shop for pickup.</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Rider arrives at your address for pickup.</span>
                         </p>
                         </div>
                         <div className="rounded-2xl p-6 bg-white/5 border border-white/10">
@@ -162,11 +162,11 @@ const HowItWorks = ({ lang, dictionary }: Props) => {
                         <div className="text-4xl font-black text-[#ff7a00]">4</div>
                         <div className="mt-2 font-medium">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>You get COD</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Payment</span>
                         </div>
                         <p className="text-sm text-zinc-300 mt-1">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>COD settled to your bank or MFS.</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Settled to your bank or MFS.</span>
                         </p>
                         </div>
                     </div>

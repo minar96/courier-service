@@ -19,7 +19,7 @@ const HomeHero = ({ lang, dictionary }: Props) => {
             <div className="w-full mx-0 2xl:mx-0 xl:mx-0 lg:mx-6 md:mx-0 sm:mx-0">
                 <div className="w-full">
                     <h1 className="mt-[24px] 2xl:mt-[32px] xl:mt-[32px] lg:mt-[32px] md:mt-[32px] text-center 2xl:text-left xl:text-left lg:text-left md:text-left font-[900]">
-                        <span className="text-[#3f3f3f] text-[48px] 2xl:text-[64px] xl:text-[64px] lg:text-[48px] md:text-[48px] 2xl:leading-[76px] xl:leading-[62.4px] lg:leading-[70.2px] md:leading-[62.4px] leading-[62.4px]">
+                        <span className="text-[#3f3f3f] text-[48px] 2xl:text-[54px] xl:text-[54px] lg:text-[48px] md:text-[48px] 2xl:leading-[76px] xl:leading-[62.4px] lg:leading-[70.2px] md:leading-[62.4px] leading-[62.4px]">
                             <span className={lang === 'bn' ? 'font-noto-sans' : 'font-mikado'}>{dictionary.HomeHero.title} {" "}</span>
                         </span>
                     </h1>
@@ -33,29 +33,55 @@ const HomeHero = ({ lang, dictionary }: Props) => {
                     <div className="rounded-3xl p-6 bg-white shadow-xl">
                     <div className="grid gap-4">
                         <div className="flex items-center gap-3">
-                        <i data-feather="map-pin" className="w-5 h-5"></i>
-                        <span className="text-sm text-zinc-700">Track your parcel</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                        </svg>
+
+                        <span className="text-sm text-zinc-700">
+                            
+                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}> Track your parcel</span>
+                        </span>
                         </div>
                         <div className="flex gap-3">
-                        <input type="text" placeholder="Enter tracking ID" className="border rounded-md p-2 w-full"/>
-                        <button className="bg-[#0e1b2a] text-white px-4 rounded">Track</button>
+                        <input type="text" placeholder="Enter tracking ID" className="border border-[#d5d5d5] rounded-md p-2 w-full"/>
+                        <button className="bg-[#0e1b2a] text-white px-4 rounded">
+                            
+                            <span className="font-mikado-regular"> Track</span>
+                        </button>
                         </div>
                         <div className="grid grid-cols-4 gap-3 mt-2">
-                        <div className="rounded-2xl border p-4 text-center">
-                            <div className="text-xl font-bold">45k+</div>
-                            <div className="text-xs text-zinc-500">Active Merchants</div>
+                        <div className="rounded-2xl border border-[#d5d5d5] p-4 text-center">
+                            <div className="text-xl font-bold">
+                                <span className="font-mikado-regular"> 300+</span>
+                            </div>
+                            <div className="text-xs text-zinc-500">
+                                <span className="font-mikado-regular"> Active Customer</span>
+                            </div>
                         </div>
-                        <div className="rounded-2xl border p-4 text-center">
-                            <div className="text-xl font-bold">64/64</div>
-                            <div className="text-xs text-zinc-500">District Coverage</div>
+                        <div className="rounded-2xl border border-[#d5d5d5] p-4 text-center">
+                            <div className="text-xl font-bold">
+                                <span className="font-mikado-regular"> All</span>
+                            </div>
+                            <div className="text-xs text-zinc-500">
+                                <span className="font-mikado-regular"> World Coverage</span>
+                            </div>
                         </div>
-                        <div className="rounded-2xl border p-4 text-center">
-                            <div className="text-xl font-bold">24-72h</div>
-                            <div className="text-xs text-zinc-500">Avg. Delivery Time</div>
+                        <div className="rounded-2xl border border-[#d5d5d5] p-4 text-center">
+                            <div className="text-xl font-bold">
+                                <span className="font-mikado-regular">3d-7d</span>
+                            </div>
+                            <div className="text-xs text-zinc-500">
+                                <span className="font-mikado-regular"> Avg. Delivery Time</span>
+                            </div>
                         </div>
-                        <div className="rounded-2xl border p-4 text-center">
-                            <div className="text-xl font-bold">120k+</div>
-                            <div className="text-xs text-zinc-500">Daily Shipments</div>
+                        <div className="rounded-2xl border border-[#d5d5d5] p-4 text-center">
+                            <div className="text-xl font-bold">
+                                <span className="font-mikado-regular"> 500kg+</span>
+                            </div>
+                            <div className="text-xs text-zinc-500">
+                                <span className="font-mikado-regular"> Everyday Shipments</span>
+                            </div>
                         </div>
                         </div>
                     </div>

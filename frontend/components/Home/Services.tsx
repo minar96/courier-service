@@ -94,26 +94,40 @@ const Services = ({ lang, dictionary }: Props) => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-4">
             <div className="rounded-2xl border border-[#d5d5d5] p-6 hover:shadow-lg transition">
                 <div className="flex items-center gap-2 text-lg mb-2">
-                <span className="p-2 rounded-xl bg-[#fde7d6]"><i data-feather="truck"></i></span>
-                    <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Worldwide Doorstep Delivery</span>
+                <span className="p-2 rounded-xl bg-[#fde7d6]">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                    </svg>
+
+                </span>
+                    <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Worldwide Doorstep Delivery Service</span>
                 </div>
                 <p className="text-sm text-zinc-600">
-                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Pickup from your shop, deliver to 64 districts & 490+ upazilas.</span>
+                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Pickup from your address, deliver to Asia, Europe and USA.</span>
                 </p>
             </div>
             <div className="rounded-2xl border border-[#d5d5d5] p-6 hover:shadow-lg transition">
                 <div className="flex items-center gap-2 text-lg mb-2">
-                <span className="p-2 rounded-xl bg-[#fde7d6]"><i data-feather="clock"></i></span>
-                <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Fast COD Settlement</span>
+                <span className="p-2 rounded-xl bg-[#fde7d6]">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                </span>
+                <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Fast Settlement</span>
                
                 </div>
                 <p className="text-sm text-zinc-600">
-                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Cash within 24-48 hours in major cities (T&C apply).</span>
+                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Reached within 72 hours in major cities (T&C apply).</span>
                 </p>
             </div>
             <div className="rounded-2xl border border-[#d5d5d5] p-6 hover:shadow-lg transition">
                 <div className="flex items-center gap-2 text-lg mb-2">
-                <span className="p-2 rounded-xl bg-[#fde7d6]"><i data-feather="shield"></i></span>
+                <span className="p-2 rounded-xl bg-[#fde7d6]">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                    </svg>
+
+                </span>
                 <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}> Secure Handling</span>
                
                 </div>
@@ -123,7 +137,12 @@ const Services = ({ lang, dictionary }: Props) => {
             </div>
             <div className="rounded-2xl border border-[#d5d5d5] p-6 hover:shadow-lg transition">
                 <div className="flex items-center gap-2 text-lg mb-2">
-                <span className="p-2 rounded-xl bg-[#fde7d6]"><i data-feather="calculator"></i></span>
+                <span className="p-2 rounded-xl bg-[#fde7d6]">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 8.25.22-.22a.75.75 0 0 1 1.28.53v6.441c0 .472.214.934.64 1.137a3.75 3.75 0 0 0 4.994-1.77c.205-.428-.152-.868-.627-.868h-.507m-6-2.25h7.5M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                    </svg>
+
+                </span>
                  <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Transparent Pricing</span>
                 
                 </div>
@@ -149,13 +168,13 @@ const Services = ({ lang, dictionary }: Props) => {
                 </h3>
                 <p className="text-sm text-zinc-600">
                     
-                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Same/next-day delivery within metro areas.</span>
+                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> 7days delivery within metro areas.</span>
                 </p>
                 </div>
                 <div className="rounded-2xl border border-[#d5d5d5] p-6">
                 <h3 className="mb-2">
                     
-                    <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Suburb & Upazila</span>
+                    <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Suburb</span>
                 </h3>
                 <p className="text-sm text-zinc-600">
                    
@@ -165,11 +184,11 @@ const Services = ({ lang, dictionary }: Props) => {
                 <div className="rounded-2xl border border-[#d5d5d5] p-6">
                 <h3 className="mb-2">
                     
-                    <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Nationwide</span>
+                    <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Worldwide</span>
                 </h3>
                 <p className="text-sm text-zinc-600">
                    
-                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>  Door-to-door across Bangladesh.</span>
+                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>  Door-to-door across the world.</span>
                 </p>
                 </div>
                 <div className="rounded-2xl border border-[#d5d5d5] p-6">

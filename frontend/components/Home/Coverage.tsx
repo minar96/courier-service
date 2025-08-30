@@ -158,38 +158,43 @@ const Coverage = ({ lang, dictionary }: Props) => {
                     <div>
                         <h2 className="text-2xl md:text-3xl font-bold">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Nationwide coverage</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Worldwide coverage</span>
                         </h2>
                         <p className="mt-3 text-zinc-600 max-w-xl">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> From Dhaka to the most remote upazilas — we cover all 64 districts with partner hubs and verified riders.</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> From Dhaka to the foreign cities with partner hubs and verified riders.</span>
                         </p>
                         <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-3">
                         <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Dhaka</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Singapure</span>
                         </div>
                         <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Chattogram</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> China</span>
                         </div>
                         <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Sylhet</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Europe</span>
                         </div>
                         <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Rajshahi</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> America</span>
                         </div>
                         <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Khulna</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Canada</span>
                         </div>
                         <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Barishal</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> Australia</span>
                         </div>
                         </div>
                     </div>
                     <div className="rounded-3xl p-1 bg-[#fde7d6]">
-                        <div className="aspect-[4/3] rounded-3xl bg-white flex items-center justify-center shadow-xl">
-                        <i data-feather="map-pin" className="w-10 h-10"></i>
-                        <span className="ml-3 text-zinc-700">Bangladesh coverage map (placeholder)</span>
+                        <div className="rounded-3xl p-3 bg-white flex items-center justify-center shadow-xl">
+                            <Image
+                                src="/assets/img/home/coverage.jpg"
+                                alt="Loading"
+                                width={400}
+                                height={250}
+                                className="w-full object-cover mx-auto rounded-3xl"
+                            />
                         </div>
                     </div>
                     </div>

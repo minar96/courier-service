@@ -28,13 +28,13 @@ const ClientContend = ({ children, lang, dictionary, params }: Props) => {
   if (loading || !dictionary) {
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
-        <Image
+        {/* <Image
           src="/assets/img/home/maskot.gif"
           alt="Loading"
           width={100}
           height={100}
           className="w-[5%] object-cover mx-auto"
-        />
+        /> */}
       </div>
     );
   }
