@@ -1,0 +1,98 @@
+<svg width="387" height="350" viewBox="0 0 387 350" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		/* Animation definitions */
+		@keyframes blink {
+		0%, 48%, 52%, 100% { transform: scaleY(1); }
+		50% { transform: scaleY(0.1); }
+		}
+		
+		/* Smile animations removed */
+		
+		@keyframes float {
+		0%, 100% { transform: translateY(0); }
+		50% { transform: translateY(-5px); }
+		}
+		
+		@keyframes float2 {
+		0%, 100% { transform: translateY(0); }
+		50% { transform: translateY(-7px); }
+		}
+		
+		@keyframes wiggle {
+		0%, 100% { transform: rotate(0deg); }
+		25% { transform: rotate(2deg); }
+		75% { transform: rotate(-2deg); }
+		}
+		
+		/* Apply animations to elements */
+		#blue-face {
+		animation: float 4s ease-in-out infinite;
+		transform-origin: center;
+		}
+		
+		#orange-face {
+		animation: float2 5s ease-in-out infinite;
+		transform-origin: center;
+		}
+		
+		.eye {
+		animation: blink 3s infinite;
+		transform-origin: center;
+		}
+		
+		#right-eye-blue {
+		animation: blink 3s 0.1s infinite;
+		}
+		
+		#left-eye-orange {
+		animation: blink 3.5s 0.2s infinite;
+		}
+		
+		#right-eye-orange {
+		animation: blink 3.5s infinite;
+		}
+		
+		.blush {
+		animation: wiggle 7s ease-in-out infinite;
+		transform-origin: center;
+		}
+		
+		/* Removed smile animations */
+	</style>
+	<!-- Blue Face Group -->
+	<g id="blue-face">
+		<path d="M314.184 117.578C318.459 117.015 322.395 120.324 322.92 124.922L335.249 233.088C335.76 237.574 332.827 241.61 328.657 242.159L228.087 255.42C223.811 255.984 219.875 252.675 219.351 248.076L207.021 139.911C206.51 135.425 209.443 131.389 213.614 130.839L314.184 117.578Z" fill="#3A5DC4" />
+		<!-- Eyes -->
+		<g class="eye" id="left-eye-blue">
+			<path d="M268.785 165.836C271.11 169.358 270.364 174.291 267.03 176.838C263.696 179.384 259.119 178.517 256.794 174.995C254.468 171.473 255.215 166.54 258.548 163.993C261.882 161.447 266.459 162.314 268.785 165.836Z" fill="#111111" stroke="white" stroke-width="2.78" />
+		</g>
+		<g class="eye" id="right-eye-blue">
+			<path d="M294.193 180.14C296.519 183.662 295.772 188.595 292.439 191.141C289.105 193.688 284.528 192.821 282.202 189.299C279.877 185.777 280.623 180.844 283.957 178.297C287.291 175.751 291.868 176.618 294.193 180.14Z" fill="#111111" stroke="white" stroke-width="2.78" />
+		</g>
+		<!-- Smile -->
+		<path id="blue-smile" d="M250.153 184.675C253.801 189.772 263.894 205.484 283.212 203.998" stroke="black" stroke-width="3.27" />
+		<!-- Blush spots -->
+		<g class="blush">
+			<ellipse cx="3.12409" cy="3.19425" rx="3.12409" ry="3.19425" transform="matrix(0.56389 0.853948 -0.77654 0.593159 250.618 179.503)" fill="#FEAB33" />
+			<ellipse cx="4.37373" cy="4.47195" rx="4.37373" ry="4.47195" transform="matrix(0.56389 0.853948 -0.77654 0.593159 286.928 198.324)" fill="#FEAB33" />
+		</g>
+	</g>
+	<!-- Orange Face Group -->
+	<g id="orange-face">
+		<path d="M158.865 100.612C161.815 91.8477 174.104 92.7655 175.9 101.884L181.922 132.471C182.888 137.38 187.496 140.596 192.257 139.683L221.351 134.11C230.048 132.444 235.528 143.547 229.084 149.777L206.17 171.933C202.797 175.195 202.448 180.604 205.369 184.336L225.217 209.686C230.798 216.814 223.944 226.996 215.545 224.053L187.446 214.208C182.848 212.597 177.871 215.097 176.283 219.815L166.388 249.214C163.438 257.978 151.149 257.06 149.354 247.942L143.331 217.355C142.365 212.445 137.757 209.23 132.996 210.142L103.902 215.716C95.2051 217.382 89.725 206.279 96.1686 200.048L119.083 177.892C122.456 174.631 122.805 169.221 119.884 165.489L100.036 140.14C94.4551 133.011 101.309 122.829 109.708 125.772L137.807 135.617C142.405 137.228 147.382 134.728 148.97 130.01L158.865 100.612Z" fill="#FEAB33" />
+		<!-- Eyes -->
+		<g class="eye" id="left-eye-orange">
+			<path d="M151.749 155.625C155.418 157.247 157.273 161.831 155.701 165.945C154.129 170.059 149.814 171.915 146.144 170.293C142.475 168.671 140.619 164.088 142.191 159.974C143.763 155.859 148.08 154.003 151.749 155.625Z" fill="#111111" stroke="white" stroke-width="2.78" />
+		</g>
+		<g class="eye" id="right-eye-orange">
+			<path d="M180.334 153.125C184.004 154.747 185.858 159.331 184.286 163.445C182.714 167.559 178.399 169.415 174.73 167.793C171.06 166.171 169.205 161.588 170.777 157.474C172.349 153.359 176.665 151.503 180.334 153.125Z" fill="#111111" stroke="white" stroke-width="2.78" />
+		</g>
+		<!-- Smile -->
+		<path id="orange-smile" d="M145.345 182.273C150.96 184.487 167.294 191.974 182.89 179.623" stroke="black" stroke-width="3.27" />
+		<!-- Blush spots -->
+		<g class="blush">
+			<ellipse cx="3.07665" cy="3.23998" rx="3.07665" ry="3.23998" transform="matrix(0.914636 0.404279 -0.35694 0.934127 143.17 177.632)" fill="#D77121" />
+			<ellipse cx="4.30731" cy="4.53597" rx="4.30731" ry="4.53597" transform="matrix(0.914636 0.404279 -0.35694 0.934127 183.213 172.691)" fill="#D77121" />
+		</g>
+	</g>
+</svg>
