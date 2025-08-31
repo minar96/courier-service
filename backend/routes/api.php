@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\CategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,12 +35,14 @@ Route::prefix('v1')->group(function () {
 
         Route::get('/profile', fn(Request $request) => $request->user()->load('roles'));
 
+        // Public category routes
+        Route::get('categories', [CategoryController::class, 'index']);
         /*
     |--------------------------------------------------------------------------
     | User Routes
     |--------------------------------------------------------------------------
     */
-        Route::prefix('user')->middleware('role:user')->group(function () {
+        Route::middleware('role:user')->group(function () {
             Route::get('/dashboard', fn() => response()->json(['msg' => 'User Dashboard']));
         });
 
@@ -48,8 +51,18 @@ Route::prefix('v1')->group(function () {
     | Admin Routes
     |--------------------------------------------------------------------------
     */
-        Route::prefix('admin')->middleware('role:admin')->group(function () {
+        Route::middleware('role:admin')->group(function () {
             Route::get('/dashboard', fn() => response()->json(['msg' => 'Admin Dashboard']));
+
+            // Category Routes
+            Route::prefix('categories')->group(function () {
+                Route::post('store', [CategoryController::class, 'store']);
+                Route::put('update/{id}', [CategoryController::class, 'update']);
+                Route::get('show/{id}', [CategoryController::class, 'show']);
+                Route::delete('destroy/{id}', [CategoryController::class, 'destroy']);
+                Route::post('{id}/restore', [CategoryController::class, 'restore']);
+                Route::delete('{id}/force', [CategoryController::class, 'forceDelete']);
+            });
         });
 
         /*
@@ -57,7 +70,7 @@ Route::prefix('v1')->group(function () {
     | Deliveryman Routes
     |--------------------------------------------------------------------------
     */
-        Route::prefix('deliveryman')->middleware('role:deliveryman')->group(function () {
+        Route::middleware('role:deliveryman')->group(function () {
             Route::get('/dashboard', fn() => response()->json(['msg' => 'Deliveryman Dashboard']));
         });
     });
