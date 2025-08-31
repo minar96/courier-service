@@ -81,5 +81,43 @@
      "support1":"Help Center",
      "support2":"FAQ",
      "suppert3":"Terms"
+  },
+  "PriceCalculator":{
+    "title":"Delivery calculator",
+    "subTitle":"Plan your shipments with ease as you estimate delivery costs beforehand",
+    "weight":"Weight ( Upto 10kg )",
+    "country":"Delivery Country",
+    "city":"Delivery City",
+    "button":"Calculate Price"
+  },
+   "HomeFAQ":[
+    {
+      "id": 1,
+      "title": "How long does international delivery take?",
+      "description": "Depending on the destination, most parcels reach major cities within 3–7 business days."
+    },
+    {
+     "id": 2,
+      "title": "Can I track my shipment online?",
+      "description": "Yes, every shipment comes with a tracking ID that allows you to check real-time updates."
+    },
+    {
+      "id": 3,
+      "title": "What items are restricted from shipping?",
+      "description": "Hazardous materials, perishable food, illegal goods, and fragile items may not be accepted."
+    },
+    {
+      "id": 4,
+      "title": "Do I need to pay customs duty or import taxes for international shipments?",
+      "description": "Yes, customs duties and taxes vary by country. The recipient is usually responsible for paying them."
+    },
+    {
+      "id": 5,
+      "title": "What documents are required for international courier services?",
+      "description": "A commercial invoice, packing list, and in some cases additional permits may be needed depending on the destination country."
+    }
+  ],
+   "Faq":{
+    "title": "FAQs"
   }
 }

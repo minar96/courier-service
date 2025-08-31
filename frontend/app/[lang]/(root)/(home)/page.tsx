@@ -5,6 +5,7 @@ import HomeHero from "@/components/Home/HomeHero";
 import Services from "@/components/Home/Services";
 import HowItWorks from "@/components/Home/HowItWorks";
 import Coverage from "@/components/Home/Coverage";
+import PriceCalculator from "@/components/Home/PriceCalculator";
 import Testimonial from "@/components/Home/Testimonial";
 import StartShipping from "@/components/Home/StartShipping";
 import Event from "@/components/Home/Event"
@@ -40,11 +41,20 @@ const HomePage = async (props: { params: Promise<{ lang: Locale }> }) => {
       <div id="homeCoverage" className="w-full bg-[#FFF]">
         <Coverage lang={lang} dictionary={dictionary}/>
       </div>
+      <div id="homePriceCalculator" className="w-full bg-[#FFF]">
+        <PriceCalculator lang={lang} dictionary={dictionary}/>
+      </div>
       <div id="homeTestimonial" className="w-full bg-[#FFF]">
         <Testimonial lang={lang} dictionary={dictionary} />
       </div>
       <div id="homeStartShipping" className="w-full bg-[#0e1b2a]">
         <StartShipping lang={lang} dictionary={dictionary} />
+      </div>
+      <div
+        id="homeFaq"
+        className="w-full bg-[#fff4e33d]"
+      >
+        <Faq lang={lang} dictionary={dictionary} />
       </div>
       
     </>

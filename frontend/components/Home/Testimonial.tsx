@@ -129,7 +129,10 @@ const Testimonial = ({ lang, dictionary }: Props) => {
                 </div> */}
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex items-end justify-between mb-6">
-                    <h2 className="text-2xl md:text-3xl font-bold">{dictionary.testimonial.title}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold">
+                        
+                        <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}> {dictionary.testimonial.title}</span>
+                    </h2>
                     <div className="flex gap-1">
                     <i data-feather="star" className="w-4 h-4"></i>
                     <i data-feather="star" className="w-4 h-4"></i>
