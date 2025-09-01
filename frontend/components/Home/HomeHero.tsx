@@ -14,12 +14,12 @@ interface Props {
 const HomeHero = ({ lang, dictionary }: Props) => {
 
   return (
-    <Wrapper className="w-full h-[1050px] 2xl:h-[850px] xl:h-[850px] lg:h-[750px] md:h-[750px] grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="w-full flex justify-center items-center px-5 2xl:px-0 xl:px-0 lg:px-0 md:px-0">
+    <Wrapper className="w-full h-[1050px] 2xl:h-[850px] xl:h-[850px] lg:h-[750px] md:h-[750px] grid grid-cols-1 lg:grid-cols-2 gap-4 px-5 2xl:px-0 xl:px-0 lg:px-0 md:px-0">
+        <div className="w-full flex justify-center items-center">
             <div className="w-full mx-0 2xl:mx-0 xl:mx-0 lg:mx-6 md:mx-0 sm:mx-0">
                 <div className="w-full">
                     <h1 className="mt-[24px] 2xl:mt-[0] xl:mt-[0] lg:mt-[0] md:mt-[0] text-center 2xl:text-left xl:text-left lg:text-left md:text-left font-[800]">
-                        <span className="text-[#3f3f3f] text-[48px] 2xl:text-[48px] xl:text-[48px] lg:text-[48px] md:text-[48px] 2xl:leading-[60px] xl:leading-[50px] lg:leading-[50px] md:leading-[62.4px] leading-[62.4px]">
+                        <span className="text-[#3f3f3f] text-[42px] 2xl:text-[48px] xl:text-[48px] lg:text-[48px] md:text-[48px] 2xl:leading-[60px] xl:leading-[50px] lg:leading-[50px] md:leading-[62.4px] leading-[62.4px]">
                             <span className={lang === 'bn' ? 'font-noto-sans' : 'font-mikado'}>{dictionary.HomeHero.title} {" "}</span>
                         </span>
                     </h1>
@@ -34,7 +34,7 @@ const HomeHero = ({ lang, dictionary }: Props) => {
                     <div>
                         <Link
                             href="#homeCourseCategory"
-                            className="w-full font-mikado flex text-[16px] flex-shrink-0 items-center justify-center gap-3 px-[36px] py-[18px] h-[44px] bg-[#ff7a00] rounded-[50px] cursor-pointer hover:bg-[#ff8c28] transition duration-300 ease-in-out"
+                            className="w-full font-mikado flex text-[16px] flex-shrink-0 items-center justify-center gap-3 px-[36px] py-[18px] h-[48px] bg-[#ff7a00] rounded-[50px] cursor-pointer hover:bg-[#ff8c28] transition duration-300 ease-in-out"
                         >
                             <span className="text-[#f8f8f8] text-[16px] font-mikado-regular font-bold leading-[34px]">
                                  <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.HomeHero.learningBtn}</span>
@@ -44,10 +44,10 @@ const HomeHero = ({ lang, dictionary }: Props) => {
                 </div>
             </div>
         </div>
-        <div className="w-full relative flex justify-center items-center">
+        <div className="w-full relative xl:flex justify-center items-center">
            
             {/* <div className="w-[120px] absolute top-[-50%] 2xl:top-[30%] xl:top-[30%] lg:top-[30%] md:top-[30%] left-[-2%] z-[9999] rotate-slow"> */}
-            <div className="w-full ms-[20px] ">
+            <div className="w-full ms-0 2xl:ms-[20px] xl:ms-[20px] lg:ms-[20px] md:ms-[20px] ">
                 {/* <Image
                     src="/assets/img/home/home-bg.png"
                     alt="Description"
@@ -73,11 +73,10 @@ const HomeHero = ({ lang, dictionary }: Props) => {
                             <div className="flex gap-3">
                             <input type="text" placeholder="Enter tracking ID" className="border border-[#d5d5d5] rounded-md p-2 w-full"/>
                             <button className="bg-[#0e1b2a] text-white px-4 rounded">
-                                
                                 <span className="font-mikado-regular"> Track</span>
                             </button>
                             </div>
-                            <div className="grid grid-cols-4 gap-3 mt-2">
+                            <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 mt-2">
                             <div className="rounded-2xl border border-[#d5d5d5] p-4 text-center">
                                 <div className="text-xl font-bold">
                                     <span className="font-mikado-regular"> 300+</span>
