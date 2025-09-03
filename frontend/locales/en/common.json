@@ -129,5 +129,20 @@
     "password":"Password",
     "forgotPassword":"Forgot password?",
     "button":"Sign In"
+  },
+  "signup":{
+    "title":"Sign up to your account",
+    "nothave":"Already have an account?",
+    "login":"Login",
+    "name":"Name",
+    "namePlaceholder":"Write your name",
+    "mobile": "Mobile Number",
+    "mobilePlaceholder":"Enter your mobile number",
+    "password":"Password",
+    "confirmPassword":"Confirm Password",
+    "button":"Sign Up"
+  },
+  "orderCategory":{
+    "title":"Select a category"
   }
 }

@@ -100,7 +100,7 @@ const Header = ({ className, dictionary, params }: Props) => {
                 </li>
                  <li>
                   <Link
-                    href="#"
+                    href={`/${lang}/signup`}
                     className="block py-2 px-3 text-[#22304A] text-[18px] 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] leading-[36px]"
                   >
                     <div className="text-[#ff7a00] border rounded-2xl px-3">
