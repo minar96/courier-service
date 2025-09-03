@@ -119,5 +119,15 @@
   ],
    "Faq":{
     "title": "FAQs"
+  },
+  "login":{
+    "title":"Sign in to your account",
+    "nothave":"Don’t have an account?",
+    "signup":"Sign up",
+    "mobile": "Mobile Number",
+    "mobilePlaceholder":"Enter your mobile number",
+    "password":"Password",
+    "forgotPassword":"Forgot password?",
+    "button":"Sign In"
   }
 }

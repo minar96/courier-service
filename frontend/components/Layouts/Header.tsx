@@ -87,17 +87,20 @@ const Header = ({ className, dictionary, params }: Props) => {
                 </li>
                 <li>
                   <Link
-                    href="/contact"
-                    className="block py-2 px-3 text-[#22304A] text-[18px] 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] leading-[36px]"
+                    href={`/${lang}/login`}
+                    className="block py-2 px-3 text-[#22304A] text-[18px] leading-[36px]"
                   >
-                  <div className="rounded-2xl px-5 bg-[#0e1b2a] text-white">
-                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.headerMenu.login}</span>
-                  </div>
+                    <div className="rounded-2xl px-5 bg-[#0e1b2a] text-white">
+                      <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>
+                        {dictionary.headerMenu.login}
+                      </span>
+                    </div>
                   </Link>
+
                 </li>
                  <li>
                   <Link
-                    href="/contact"
+                    href="#"
                     className="block py-2 px-3 text-[#22304A] text-[18px] 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] leading-[36px]"
                   >
                     <div className="text-[#ff7a00] border rounded-2xl px-3">
