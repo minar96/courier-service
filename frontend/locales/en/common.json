@@ -143,6 +143,21 @@
     "button":"Sign Up"
   },
   "orderCategory":{
-    "title":"Select a category"
+    "title":"Select a category",
+    "cloth":"Cloth",
+    "shoe":"Shoe",
+    "electronics":"Electronics",
+    "book":"Book",
+    "kitchen":"Kitchen Item",
+    "cosmetics":"Cosmetics",
+    "child":"Child Product",
+    "liquid":"Liquid",
+    "medicine":"Medicine",
+    "broken":"Broken Item",
+    "food":"Dry Food",
+    "home":"Home Decoration",
+    "weight":"Heavey Weight",
+    "document":"Document",
+    "other":"Others"
   }
 }
