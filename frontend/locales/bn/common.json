@@ -161,7 +161,10 @@
     "weight": "ভারী ওজন",
     "document": "ডকুমেন্ট",
     "other": "অন্যান্য"
-
+  },
+   "orderForm":{
+    "title":"New Order",
+    "subTitle":"Please write your required information"
   }
 
 }

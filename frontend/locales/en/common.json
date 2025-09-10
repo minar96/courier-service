@@ -159,5 +159,9 @@
     "weight":"Heavey Weight",
     "document":"Document",
     "other":"Others"
+  },
+  "orderForm":{
+    "title":"New Order",
+    "subTitle":"Please write your required information"
   }
 }

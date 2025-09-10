@@ -1,10 +1,10 @@
-import Hero from "@/components/Order/Category/Bannar";
+import Hero from "@/components/Order/OrderForm";
 
 import { Footer, Header } from "@/components/Layouts";
 import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
 
-const OrderCategoryPage = async (props: { params: Promise<{ lang: Locale }> }) => {
+const OrderFormPage = async (props: { params: Promise<{ lang: Locale }> }) => {
     const { lang } = await props.params;
     const dictionary = await getDictionary(lang);
   return (
@@ -15,7 +15,7 @@ const OrderCategoryPage = async (props: { params: Promise<{ lang: Locale }> }) =
           This is my new header 🎉
         </h1>
       </div>
-        <div id="OrderCategoryHero" className="w-full bg-[#fff4e33d]">
+        <div id="OrderFormHero" className="w-full bg-[#fff4e33d]">
             <Hero lang={lang} dictionary={dictionary}/>
         </div>
        
@@ -23,4 +23,4 @@ const OrderCategoryPage = async (props: { params: Promise<{ lang: Locale }> }) =
     );
 };
 
-export default OrderCategoryPage;
+export default OrderFormPage;
