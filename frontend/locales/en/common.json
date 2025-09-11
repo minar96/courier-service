@@ -162,6 +162,30 @@
   },
   "orderForm":{
     "title":"New Order",
-    "subTitle":"Please write your required information"
+    "subTitle":"Please write your required information",
+    "yourAddress":"Product collection address",
+    "yourAddressPlaceholder":"Write your address",
+    "weight":"Weight",
+    "weightPlaceholder":"Select your product weight",
+    "customerTitle":"Receiver Information",
+    "customerName":"Receiver Name",
+    "customerNamePlaceholder":"Write receiver name",
+    "customerPhone":"Receiver phone number",
+    "customerPhonePlaceholder":"Write receiver phone number",
+    "customerEmail":"Receiver Email",
+    "customerEmailPlaceholder":"Write receiver email address",
+    "country":"Country",
+    "countryPlaceholder":"Select a country name",
+    "city":"City",
+    "cityPlaceholder":"Select a city name",
+    "suburn":"Suburn",
+    "suburnPlaceholder":"Select a suburn name",
+    "detailsAddress":"Details Address",
+    "detailsAddressPlaceholder":"Write receiver details addredd",
+    "productTitle":"Product",
+    "product":"Description of product",
+    "productPlaceholder":"Write your product description in short",
+    "collection":"Collection Date",
+    "button":"Order Now"
   }
 }

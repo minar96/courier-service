@@ -163,8 +163,34 @@
     "other": "অন্যান্য"
   },
    "orderForm":{
-    "title":"New Order",
-    "subTitle":"Please write your required information"
+    "title": "নতুন অর্ডার",
+    "subTitle": "অনুগ্রহ করে আপনার প্রয়োজনীয় তথ্য লিখুন",
+    "yourAddress": "পণ্য সংগ্রহের ঠিকানা",
+    "yourAddressPlaceholder": "আপনার ঠিকানা লিখুন",
+    "weight": "ওজন",
+    "weightPlaceholder": "আপনার পণ্যের ওজন নির্বাচন করুন",
+    "customerTitle": "গ্রাহকের তথ্য",
+    "customerName": "গ্রাহকের নাম",
+    "customerNamePlaceholder": "গ্রাহকের নাম লিখুন",
+    "customerPhone": "গ্রাহকের ফোন নম্বর",
+    "customerPhonePlaceholder": "গ্রাহকের ফোন নম্বর লিখুন",
+    "customerEmail": "গ্রাহকের ইমেইল",
+    "customerEmailPlaceholder": "গ্রাহকের ইমেইল ঠিকানা লিখুন",
+    "country": "দেশ",
+    "countryPlaceholder": "একটি দেশের নাম নির্বাচন করুন",
+    "city": "শহর",
+    "cityPlaceholder": "একটি শহরের নাম নির্বাচন করুন",
+    "suburn": "উপশহর",
+    "suburnPlaceholder": "একটি উপশহরের নাম নির্বাচন করুন",
+    "detailsAddress": "বিস্তারিত ঠিকানা",
+    "detailsAddressPlaceholder": "গ্রাহকের বিস্তারিত ঠিকানা লিখুন",
+    "productTitle":"পণ্য",
+    "product": "পণ্যের বিবরণ",
+    "productPlaceholder": "আপনার পণ্যের সংক্ষিপ্ত বিবরণ লিখুন",
+    "collection": "সংগ্রহের তারিখ",
+   "button": "অর্ডার করুন"
+
+
   }
 
 }
