@@ -187,5 +187,15 @@
     "productPlaceholder":"Write your product description in short",
     "collection":"Collection Date",
     "button":"Order Now"
+  },
+  "checkout":{
+    "title":"Checkout",
+    "subTitle":"Please check the information and payment",
+    "name":"Receiver Name",
+    "email":"Receiver Email",
+    "address":"Receiver Address",
+    "weight":"Product Weight",
+    "shiping":"Shiping Cost",
+    "button":"Pay Now"
   }
 }
