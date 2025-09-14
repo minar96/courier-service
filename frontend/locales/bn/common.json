@@ -191,14 +191,15 @@
    "button": "অর্ডার করুন"
   },
   "checkout":{
-    "title":"Checkout",
-    "subTitle":"Please check the information and payment",
-    "name":"Receiver Name",
-     "email":"Receiver Email",
-    "address":"Receiver Address",
-    "weight":"Product Weight",
-    "shiping":"Shiping Cost",
-    "button":"Pay Now"
+    "title": "চেকআউট",
+    "subTitle": "দয়া করে তথ্য ও পেমেন্ট যাচাই করুন",
+    "name": "রিসিভারের নাম",
+    "email": "রিসিভারের ইমেইল",
+    "address": "রিসিভারের ঠিকানা",
+    "weight": "পণ্যের ওজন",
+    "shiping": "শিপিং খরচ",
+    "button": "পেমেন্ট করুন"
+
   }
 
 }

@@ -10,11 +10,11 @@ const OrderFormPage = async (props: { params: Promise<{ lang: Locale }> }) => {
   return (
     <>
         {/* 🔥 Custom Header only for this page */}
-      <div className="sticky top-0 z-50 w-full bg-blue-600 text-white py-4 px-6 shadow-md">
+      {/* <div className="sticky top-0 z-50 w-full bg-blue-600 text-white py-4 px-6 shadow-md">
         <h1 className="text-xl font-bold">
           This is my new header 🎉
         </h1>
-      </div>
+      </div> */}
         <div id="OrderFormHero" className="w-full bg-[#fff4e33d]">
             <Hero lang={lang} dictionary={dictionary}/>
         </div>

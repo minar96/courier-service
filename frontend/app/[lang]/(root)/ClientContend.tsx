@@ -32,8 +32,10 @@ const ClientContend = ({ children, lang, dictionary, params }: Props) => {
   }
 
   // Pages where you don’t want a header
-  const noHeaderPages = ["/en/add-order-category", "/bn/add-order-category"]; // change based on your routes
+  const noHeaderPages = ["/en/add-order-category", "/bn/add-order-category", "/en/add-order", "/bn/add-order", "/en/checkout", "/bn/checkout"]; // change based on your routes
   const hideHeader = noHeaderPages.includes(pathname);
+  const noFooterPages = ["/en/add-order-category", "/bn/add-order-category", "/en/add-order", "/bn/add-order", "/en/checkout", "/bn/checkout"]; // change based on your routes
+  const hideFooter = noFooterPages.includes(pathname);
 
   return (
     <div
@@ -51,8 +53,9 @@ const ClientContend = ({ children, lang, dictionary, params }: Props) => {
       )}
 
       <div className="w-full">{children}</div>
-
+    {!hideFooter && (
       <Footer dictionary={dictionary} params={params} />
+      )}
     </div>
   );
 };

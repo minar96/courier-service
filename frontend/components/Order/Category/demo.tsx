@@ -1,10 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+import Image from "next/image";
+import { Icon, Wrapper } from "../../UI";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // ✅ for active link
+import { useRouter } from "next/navigation";
+
 import { type getDictionary } from "@/get-dictionary";
-import { Menu, X } from "lucide-react";
 
 interface Props {
   lang: string;
@@ -12,87 +14,17 @@ interface Props {
 }
 
 const Bannar = ({ lang, dictionary }: Props) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const pathname = usePathname(); // ✅ detect current route
-
-  const menuItems = [
-    { label: "Dashboard", href: "#" },
-    { label: "New Orders", href: "/add-order-category" },
-    { label: "Profile", href: "#" },
-    { label: "Settings", href: "#" },
-  ];
-
   return (
-    <div className="flex min-h-screen">
-      {/* Sidebar */}
-      <div
-        className={`fixed top-0 left-0 z-50 h-screen w-64 bg-white shadow-lg transition-transform duration-300
-        ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
-      >
-        <div className="flex items-center justify-between px-4 py-4">
-          <h2 className="text-xl font-bold text-gray-800">Menu</h2>
-          <button
-            className="lg:hidden"
-            onClick={() => setSidebarOpen(false)}
-          >
-            <X className="w-6 h-6 text-gray-700" />
-          </button>
-        </div>
-        <nav className="p-4 space-y-2">
-          {menuItems.map((item, i) => {
-            const isActive = pathname === item.href;
-            return (
-              <Link
-                key={i}
-                href={item.href}
-                className={`block px-3 py-2 rounded-lg ${
-                  isActive
-                    ? "bg-gray-200 text-gray-900 font-semibold"
-                    : "text-gray-700 hover:bg-gray-100"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
-      </div>
-
-      {/* Main Content (Header + Page) */}
-      <div className="flex-1 flex flex-col lg:ml-64">
-        {/* Header */}
-        <header className="sticky top-0 z-40 bg-white h-16 flex justify-end items-center px-6 lg:px-16">
-          {/* <div className=""> */}
-            {/* Mobile menu button */}
-            <button
-              className="mr-4 lg:hidden flex justify-end"
-              onClick={() => setSidebarOpen(true)}
-            >
-              <Menu className="w-6 h-6 text-gray-700" />
-            </button>
-            <h1 className="text-xl font-bold text-gray-900 flex justify-end">
-              Name
-            </h1>
-          {/* </div> */}
-        </header>
-
-        {/* Page Content */}
-        <main className="flex-1 px-6 pb-12 lg:px-16 pt-6 overflow-y-auto mx-auto">
+    <Wrapper className="w-full grid grid-cols-1">
+      <div className="flex min-h-screen mx-auto">
+        {/* Left side */}
+        <div className="flex flex-1 flex-col justify-center  px-6 pb-12 lg:px-16">
           <div className="w-full max-w-2xl mb-4">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900">
-              <span
-                className={
-                  lang === "bn"
-                    ? "font-noto-sans-regular"
-                    : "font-mikado-regular"
-                }
-              >
-                {dictionary.orderCategory.title}
-              </span>
+              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderCategory.title}</span>
             </h2>
           </div>
-
-          <div className="shadow-sm max-w-md px-3 py-3 mx-auto">
+          <div className="shadow-sm max-w-md px-3 py-3">
               <div className="w-full flex justify-between gap-3">
                 <Link  href={`/${lang}/add-order`} className="bg-[#fff] shadow-sm w-full flex justify-center items-center rounded-[4px] cursor-pointer hover:bg-[#fffcf8] transition-all duration-1000 ease-in-out">
                   <div className="p-3">
@@ -480,7 +412,7 @@ const Bannar = ({ lang, dictionary }: Props) => {
                   </div>
                 </div>
               </div>
-                <div className="w-full flex justify-between gap-3 mt-3">
+               <div className="w-full flex justify-between gap-3 mt-3">
                 <div className="bg-[#fff] shadow-sm w-full flex justify-center items-center rounded-[4px] cursor-pointer hover:bg-[#fffcf8] transition-all duration-1000 ease-in-out">
                   <div className="p-3">
                     <p>
@@ -513,7 +445,7 @@ const Bannar = ({ lang, dictionary }: Props) => {
                 <div className="bg-[#fff] shadow-sm w-full flex justify-center items-center cursor-pointer hover:bg-[#fffcf8] transition-all duration-1000 ease-in-out">
                   <div>
                     <p>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="45" viewBox="0 0 50 45" fill="none">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="45" viewBox="0 0 50 45" fill="none">
                         <path d="M2.20002 14.3352L26.382 1.6875L25.227 1.0881L1.04602 13.734L2.20002 14.3352Z" fill="#FE91AB"/>
                         <path d="M28.264 20.592C27.198 20.0376 26.334 18.6894 26.338 17.5896L26.375 1.69202L18.149 5.99402L2.20001 14.3343L2.15601 30.2346C2.15401 31.3371 3.01801 32.6853 4.08401 33.2379C4.62101 33.5178 5.10701 33.543 5.45901 33.3594L29.639 20.7117C29.287 20.8953 28.799 20.8701 28.263 20.5929L28.264 20.592Z" fill="#ED5D71"/>
                         <path d="M3.16602 14.9364L6.43202 16.6329L6.67002 16.7571V33.606C6.35402 33.5889 6.00602 33.4917 5.64002 33.3018C4.25202 32.5782 3.12502 30.8241 3.13002 29.3895L3.16602 14.9364Z" fill="#E3E7F0"/>
@@ -567,9 +499,9 @@ const Bannar = ({ lang, dictionary }: Props) => {
                 </div>
               </div>
           </div>
-        </main>
+        </div>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 

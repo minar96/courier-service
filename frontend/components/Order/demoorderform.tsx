@@ -1,87 +1,32 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+import Image from "next/image";
+import { Icon, Wrapper } from "../UI";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // ✅ for active link
+import { useRouter } from "next/navigation";
+
 import { type getDictionary } from "@/get-dictionary";
-import { Menu, X } from "lucide-react";
 
 interface Props {
   lang: string;
   dictionary: Awaited<ReturnType<typeof getDictionary>>;
 }
 
-const Bannar = ({ lang, dictionary }: Props) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const pathname = usePathname(); // ✅ detect current route
-
-  const menuItems = [
-    { label: "Dashboard", href: "#" },
-    { label: "New Orders", href: "/add-order-category" },
-    { label: "Profile", href: "#" },
-    { label: "Settings", href: "#" },
-  ];
-
+const OrderForm = ({ lang, dictionary }: Props) => {
   return (
-    <div className="flex min-h-screen">
-      {/* Sidebar */}
-      <div
-        className={`fixed top-0 left-0 z-50 h-screen w-64 bg-white shadow-lg transition-transform duration-300
-        ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
-      >
-        <div className="flex items-center justify-between px-4 py-4">
-          <h2 className="text-xl font-bold text-gray-800">Menu</h2>
-          <button
-            className="lg:hidden"
-            onClick={() => setSidebarOpen(false)}
-          >
-            <X className="w-6 h-6 text-gray-700" />
-          </button>
-        </div>
-        <nav className="p-4 space-y-2">
-          {menuItems.map((item, i) => {
-            const isActive = pathname === item.href;
-            return (
-              <Link
-                key={i}
-                href={item.href}
-                className={`block px-3 py-2 rounded-lg ${
-                  isActive
-                    ? "bg-gray-200 text-gray-900 font-semibold"
-                    : "text-gray-700 hover:bg-gray-100"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
-      </div>
-
-      {/* Main Content (Header + Page) */}
-      <div className="flex-1 flex flex-col lg:ml-64">
-        {/* Header */}
-        <header className="sticky top-0 z-40 bg-white shadow-lg h-16 flex items-center px-6 lg:px-16">
-          {/* Mobile menu button */}
-          <button
-            className="mr-4 lg:hidden"
-            onClick={() => setSidebarOpen(true)}
-          >
-            <Menu className="w-6 h-6 text-gray-700" />
-          </button>
-          <h1 className="text-xl font-bold text-gray-900 flex justify-end">
-            Name
-          </h1>
-        </header>
-
-        {/* Page Content */}
-        <main className="flex-1 px-6 pb-12 lg:px-16 pt-6 overflow-y-auto ">
-             <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+    <Wrapper className="w-full grid grid-cols-1">
+      <div className="flex min-h-screen">
+        {/* Left side */}
+        <div className="flex flex-1 flex-col justify-center px-6 pb-12 lg:px-16">
+          <div className="mx-auto w-full">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">
               <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.title}</span>
             </h2>
             <p className="mt-2 text-sm text-gray-600">
              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.subTitle}</span>{" "}
             </p>
+
             <form action="#" method="POST" className="mt-8 space-y-6">
               <div className="flex justify-start gap-4">
                 <div className="w-full">
@@ -300,10 +245,11 @@ const Bannar = ({ lang, dictionary }: Props) => {
                <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.button}</span>
               </button>
             </form>
-        </main>
+          </div>
+        </div>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 
-export default Bannar;
+export default OrderForm;
