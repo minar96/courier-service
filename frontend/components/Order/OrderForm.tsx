@@ -1,309 +1,240 @@
-"use client";
-
-import React, { useState } from "react";
+import Layout from "@/components/User/Layout";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // ✅ for active link
-import { type getDictionary } from "@/get-dictionary";
-import { Menu, X } from "lucide-react";
-
+import Image from "next/image";
 interface Props {
   lang: string;
-  dictionary: Awaited<ReturnType<typeof getDictionary>>;
+  dictionary: any;
 }
 
-const Bannar = ({ lang, dictionary }: Props) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const pathname = usePathname(); // ✅ detect current route
-
-  const menuItems = [
-    { label: "Dashboard", href: "#" },
-    { label: "New Orders", href: "/add-order-category" },
-    { label: "Profile", href: "#" },
-    { label: "Settings", href: "#" },
-  ];
-
+export default function OrderForm({ lang, dictionary }: Props) {
   return (
-    <div className="flex min-h-screen">
-      {/* Sidebar */}
-      <div
-        className={`fixed top-0 left-0 z-50 h-screen w-64 bg-white shadow-lg transition-transform duration-300
-        ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
-      >
-        <div className="flex items-center justify-between px-4 py-4">
-          <h2 className="text-xl font-bold text-gray-800">Menu</h2>
-          <button
-            className="lg:hidden"
-            onClick={() => setSidebarOpen(false)}
-          >
-            <X className="w-6 h-6 text-gray-700" />
-          </button>
-        </div>
-        <nav className="p-4 space-y-2">
-          {menuItems.map((item, i) => {
-            const isActive = pathname === item.href;
-            return (
-              <Link
-                key={i}
-                href={item.href}
-                className={`block px-3 py-2 rounded-lg ${
-                  isActive
-                    ? "bg-gray-200 text-gray-900 font-semibold"
-                    : "text-gray-700 hover:bg-gray-100"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
-      </div>
-
-      {/* Main Content (Header + Page) */}
-      <div className="flex-1 flex flex-col lg:ml-64">
-        {/* Header */}
-        <header className="sticky top-0 z-40 bg-white shadow-lg h-16 flex items-center px-6 lg:px-16">
-          {/* Mobile menu button */}
-          <button
-            className="mr-4 lg:hidden"
-            onClick={() => setSidebarOpen(true)}
-          >
-            <Menu className="w-6 h-6 text-gray-700" />
-          </button>
-          <h1 className="text-xl font-bold text-gray-900 flex justify-end">
-            Name
-          </h1>
-        </header>
-
-        {/* Page Content */}
-        <main className="flex-1 px-6 pb-12 lg:px-16 pt-6 overflow-y-auto ">
-             <h2 className="text-3xl font-bold tracking-tight text-gray-900">
-              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.title}</span>
-            </h2>
-            <p className="mt-2 text-sm text-gray-600">
-             <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.subTitle}</span>{" "}
-            </p>
-            <form action="#" method="POST" className="mt-8 space-y-6">
-              <div className="flex justify-start gap-4">
-                <div className="w-full">
+    <Layout>
+        <main className="flex-1 px-6 pb-12 lg:px-16 pt-6 overflow-y-auto">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.title}</span>
+          </h2>
+          <p className="mt-2 text-sm text-gray-600">
+            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.subTitle}</span>{" "}
+          </p>
+          <form action="#" method="POST" className="mt-8 space-y-6">
+            <div className="flex justify-start gap-4">
+              <div className="w-full">
+                <label
+                  htmlFor="full_name"
+                  className="block text-sm font-medium text-gray-900"
+                >
+                  <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.yourAddress}<span className="text-[#ff0000]">*</span></span>
+                </label>
+                <input
+                  id="full_name"
+                  name="full_name"
+                  type="text"
+                  placeholder={dictionary.orderForm.yourAddressPlaceholder}
+                  required
+                  className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-300 focus:ring-gray-300 sm:text-sm"
+                />
+              </div>
+              <div className="w-full">
                   <label
                     htmlFor="full_name"
                     className="block text-sm font-medium text-gray-900"
                   >
-                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.yourAddress}<span className="text-[#ff0000]">*</span></span>
+                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.weight}<span className="text-[#ff0000]">*</span></span>
                   </label>
                   <input
                     id="full_name"
                     name="full_name"
                     type="text"
-                    placeholder={dictionary.orderForm.yourAddressPlaceholder}
+                    placeholder={dictionary.orderForm.weightPlaceholder}
                     required
                     className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-300 focus:ring-gray-300 sm:text-sm"
                   />
-                </div>
-                <div className="w-full">
-                    <label
-                      htmlFor="full_name"
-                      className="block text-sm font-medium text-gray-900"
-                    >
-                      <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.weight}<span className="text-[#ff0000]">*</span></span>
-                    </label>
-                    <input
-                      id="full_name"
-                      name="full_name"
-                      type="text"
-                      placeholder={dictionary.orderForm.weightPlaceholder}
-                      required
-                      className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-300 focus:ring-gray-300 sm:text-sm"
-                    />
-                </div>
               </div>
+            </div>
+            <h5 className="text-[28px]">
+              <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>{dictionary.orderForm.customerTitle}</span>
+            </h5>
+            <div className="flex justify-start gap-4">
+              <div className="w-full">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-900"
+                >
+                  <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.customerEmail}<span className="text-[#ff0000]">*</span></span>
+                </label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder={dictionary.orderForm.customerEmailPlaceholder}
+                  required
+                  className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                />
+              </div>
+              <div className="w-full">
+                <label
+                  htmlFor="full_name"
+                  className="block text-sm font-medium text-gray-900"
+                >
+                  <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.customerName}<span className="text-[#ff0000]">*</span></span>
+                </label>
+                <input
+                  id="full_name"
+                  name="full_name"
+                  type="text"
+                  placeholder={dictionary.orderForm.customerNamePlaceholder}
+                  required
+                  className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-300 focus:ring-gray-300 sm:text-sm"
+                />
+              </div>
+              <div className="w-full">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-900"
+                >
+                  <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.customerPhone}<span className="text-[#ff0000]">*</span></span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder={dictionary.orderForm.customerPhonePlaceholder}
+                  required
+                  className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-300 focus:ring-gray-300 sm:text-sm"
+                />
+              </div>
+              <div className="w-full">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-900"
+                >
+                  <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.customerEmail}<span className="text-[#ff0000]">*</span></span>
+                </label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder={dictionary.orderForm.customerEmailPlaceholder}
+                  required
+                  className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                />
+              </div>
+            </div>
+            <div className="flex justify-start gap-4">
+              <div className="w-full">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-900"
+                >
+                  <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.country}<span className="text-[#ff0000]">*</span></span>
+                </label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder={dictionary.orderForm.countryPlaceholder}
+                  required
+                  className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                />
+              </div>
+              <div className="w-full">
+                <label
+                  htmlFor="full_name"
+                  className="block text-sm font-medium text-gray-900"
+                >
+                  <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.city}<span className="text-[#ff0000]">*</span></span>
+                </label>
+                <input
+                  id="full_name"
+                  name="full_name"
+                  type="text"
+                  placeholder={dictionary.orderForm.cityPlaceholder}
+                  required
+                  className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-300 focus:ring-gray-300 sm:text-sm"
+                />
+              </div>
+              <div className="w-full">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-900"
+                >
+                  <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.suburn}<span className="text-[#ff0000]">*</span></span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder={dictionary.orderForm.suburnPlaceholder}
+                  required
+                  className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-300 focus:ring-gray-300 sm:text-sm"
+                />
+              </div>
+              <div className="w-full">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-900"
+                >
+                  <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.detailsAddress}<span className="text-[#ff0000]">*</span></span>
+                </label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder={dictionary.orderForm.detailsAddressPlaceholder}
+                  required
+                  className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                />
+              </div>
+            </div>
               <h5 className="text-[28px]">
-                <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>{dictionary.orderForm.customerTitle}</span>
-              </h5>
-              <div className="flex justify-start gap-4">
-                <div className="w-full">
-                  <label
-                    htmlFor="password"
-                    className="block text-sm font-medium text-gray-900"
-                  >
-                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.customerEmail}<span className="text-[#ff0000]">*</span></span>
-                  </label>
-                  <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder={dictionary.orderForm.customerEmailPlaceholder}
-                    required
-                    className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  />
-                </div>
-                <div className="w-full">
+              <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>{dictionary.orderForm.productTitle}</span>
+            </h5>
+            <div className="flex justify-start gap-4">
+              <div className="w-full">
+                <label
+                  htmlFor="full_name"
+                  className="block text-sm font-medium text-gray-900"
+                >
+                  <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.product}<span className="text-[#ff0000]">*</span></span>
+                </label>
+                <input
+                  id="full_name"
+                  name="full_name"
+                  type="text"
+                  placeholder={dictionary.orderForm.productPlaceholder}
+                  required
+                  className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-300 focus:ring-gray-300 sm:text-sm"
+                />
+              </div>
+              <div className="w-full">
                   <label
                     htmlFor="full_name"
                     className="block text-sm font-medium text-gray-900"
                   >
-                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.customerName}<span className="text-[#ff0000]">*</span></span>
+                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.collection}<span className="text-[#ff0000]">*</span></span>
                   </label>
                   <input
                     id="full_name"
                     name="full_name"
-                    type="text"
-                    placeholder={dictionary.orderForm.customerNamePlaceholder}
+                    type="date"
+                    placeholder={dictionary.orderForm.weightPlaceholder}
                     required
                     className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-300 focus:ring-gray-300 sm:text-sm"
                   />
-                </div>
-                <div className="w-full">
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-900"
-                  >
-                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.customerPhone}<span className="text-[#ff0000]">*</span></span>
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder={dictionary.orderForm.customerPhonePlaceholder}
-                    required
-                    className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-300 focus:ring-gray-300 sm:text-sm"
-                  />
-                </div>
-                <div className="w-full">
-                  <label
-                    htmlFor="password"
-                    className="block text-sm font-medium text-gray-900"
-                  >
-                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.customerEmail}<span className="text-[#ff0000]">*</span></span>
-                  </label>
-                  <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder={dictionary.orderForm.customerEmailPlaceholder}
-                    required
-                    className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  />
-                </div>
               </div>
-              <div className="flex justify-start gap-4">
-                <div className="w-full">
-                  <label
-                    htmlFor="password"
-                    className="block text-sm font-medium text-gray-900"
-                  >
-                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.country}<span className="text-[#ff0000]">*</span></span>
-                  </label>
-                  <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder={dictionary.orderForm.countryPlaceholder}
-                    required
-                    className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  />
-                </div>
-                <div className="w-full">
-                  <label
-                    htmlFor="full_name"
-                    className="block text-sm font-medium text-gray-900"
-                  >
-                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.city}<span className="text-[#ff0000]">*</span></span>
-                  </label>
-                  <input
-                    id="full_name"
-                    name="full_name"
-                    type="text"
-                    placeholder={dictionary.orderForm.cityPlaceholder}
-                    required
-                    className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-300 focus:ring-gray-300 sm:text-sm"
-                  />
-                </div>
-                <div className="w-full">
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-900"
-                  >
-                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.suburn}<span className="text-[#ff0000]">*</span></span>
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder={dictionary.orderForm.suburnPlaceholder}
-                    required
-                    className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-300 focus:ring-gray-300 sm:text-sm"
-                  />
-                </div>
-                <div className="w-full">
-                  <label
-                    htmlFor="password"
-                    className="block text-sm font-medium text-gray-900"
-                  >
-                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.detailsAddress}<span className="text-[#ff0000]">*</span></span>
-                  </label>
-                  <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder={dictionary.orderForm.detailsAddressPlaceholder}
-                    required
-                    className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  />
-                </div>
-              </div>
-               <h5 className="text-[28px]">
-                <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>{dictionary.orderForm.productTitle}</span>
-              </h5>
-              <div className="flex justify-start gap-4">
-                <div className="w-full">
-                  <label
-                    htmlFor="full_name"
-                    className="block text-sm font-medium text-gray-900"
-                  >
-                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.product}<span className="text-[#ff0000]">*</span></span>
-                  </label>
-                  <input
-                    id="full_name"
-                    name="full_name"
-                    type="text"
-                    placeholder={dictionary.orderForm.productPlaceholder}
-                    required
-                    className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-300 focus:ring-gray-300 sm:text-sm"
-                  />
-                </div>
-                <div className="w-full">
-                    <label
-                      htmlFor="full_name"
-                      className="block text-sm font-medium text-gray-900"
-                    >
-                      <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.collection}<span className="text-[#ff0000]">*</span></span>
-                    </label>
-                    <input
-                      id="full_name"
-                      name="full_name"
-                      type="date"
-                      placeholder={dictionary.orderForm.weightPlaceholder}
-                      required
-                      className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-300 focus:ring-gray-300 sm:text-sm"
-                    />
-                </div>
-                <div className="w-full"></div>
-              </div>
-             
-              
+              <div className="w-full"></div>
+            </div>
+            
+            
 
-              <button
-                type="submit"
-                className="w-full rounded-md bg-indigo-600 px-4 py-2 text-white font-semibold shadow hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              >
-               <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.button}</span>
-              </button>
-            </form>
+            <button
+              type="submit"
+              className="w-full rounded-md bg-indigo-600 px-4 py-2 text-white font-semibold shadow hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.orderForm.button}</span>
+            </button>
+          </form>
         </main>
-      </div>
-    </div>
+    </Layout>
   );
-};
-
-export default Bannar;
+}

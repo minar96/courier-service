@@ -22,7 +22,7 @@ const Bannar = ({ lang, dictionary }: Props) => {
                 <div className="flex flex-1 flex-col justify-center px-6 pb-12 lg:px-16 ">
                   <div className="mx-auto w-full max-w-sm bg-[#fff] drop-shadow-md p-[20px] rounded-[8px]">
                     <h2 className="text-3xl font-bold tracking-tight text-gray-900">
-                      <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.checkout.title}</span>
+                      <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Dashboard{dictionary.checkout.title}</span>
                     </h2>
                     <p className="mt-2 text-sm text-gray-600">
                     <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.checkout.subTitle}</span>{" "}

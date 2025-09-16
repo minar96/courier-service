@@ -32,9 +32,27 @@ const ClientContend = ({ children, lang, dictionary, params }: Props) => {
   }
 
   // Pages where you don’t want a header
-  const noHeaderPages = ["/en/add-order-category", "/bn/add-order-category", "/en/add-order", "/bn/add-order", "/en/checkout", "/bn/checkout"]; // change based on your routes
+  const noHeaderPages = [
+    "/en/add-order-category", 
+    "/bn/add-order-category", 
+    "/en/add-order", 
+    "/bn/add-order", 
+    "/en/checkout", 
+    "/bn/checkout",
+    "/en/user-dashboard",
+    "/bn/user-dashboard",
+  ]; // change based on your routes
   const hideHeader = noHeaderPages.includes(pathname);
-  const noFooterPages = ["/en/add-order-category", "/bn/add-order-category", "/en/add-order", "/bn/add-order", "/en/checkout", "/bn/checkout"]; // change based on your routes
+  const noFooterPages = [
+    "/en/add-order-category", 
+    "/bn/add-order-category", 
+    "/en/add-order", 
+    "/bn/add-order", 
+    "/en/checkout", 
+    "/bn/checkout",
+    "/en/user-dashboard",
+    "/bn/user-dashboard",
+  ]; // change based on your routes
   const hideFooter = noFooterPages.includes(pathname);
 
   return (

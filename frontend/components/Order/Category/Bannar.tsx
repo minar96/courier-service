@@ -1,81 +1,18 @@
-"use client";
-
-import React, { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation"; // ✅ for active link
+import Layout from "@/components/User/Layout";
 import { type getDictionary } from "@/get-dictionary";
-import { Menu, X } from "lucide-react";
-
+import Link from "next/link";
+import Image from "next/image";
 interface Props {
   lang: string;
   dictionary: Awaited<ReturnType<typeof getDictionary>>;
 }
 
 const Bannar = ({ lang, dictionary }: Props) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const pathname = usePathname(); // ✅ detect current route
-
-  const menuItems = [
-    { label: "Dashboard", href: "#" },
-    { label: "New Orders", href: "/add-order-category" },
-    { label: "Profile", href: "#" },
-    { label: "Settings", href: "#" },
-  ];
+  
 
   return (
-    <div className="flex min-h-screen">
-      {/* Sidebar */}
-      <div
-        className={`fixed top-0 left-0 z-50 h-screen w-64 bg-white shadow-lg transition-transform duration-300
-        ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
-      >
-        <div className="flex items-center justify-between px-4 py-4">
-          <h2 className="text-xl font-bold text-gray-800">Menu</h2>
-          <button
-            className="lg:hidden"
-            onClick={() => setSidebarOpen(false)}
-          >
-            <X className="w-6 h-6 text-gray-700" />
-          </button>
-        </div>
-        <nav className="p-4 space-y-2">
-          {menuItems.map((item, i) => {
-            const isActive = pathname === item.href;
-            return (
-              <Link
-                key={i}
-                href={item.href}
-                className={`block px-3 py-2 rounded-lg ${
-                  isActive
-                    ? "bg-gray-200 text-gray-900 font-semibold"
-                    : "text-gray-700 hover:bg-gray-100"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
-      </div>
-
-      {/* Main Content (Header + Page) */}
-      <div className="flex-1 flex flex-col lg:ml-64">
-        {/* Header */}
-        <header className="sticky top-0 z-40 bg-white h-16 flex justify-end items-center px-6 lg:px-16">
-          {/* <div className=""> */}
-            {/* Mobile menu button */}
-            <button
-              className="mr-4 lg:hidden flex justify-end"
-              onClick={() => setSidebarOpen(true)}
-            >
-              <Menu className="w-6 h-6 text-gray-700" />
-            </button>
-            <h1 className="text-xl font-bold text-gray-900 flex justify-end">
-              Name
-            </h1>
-          {/* </div> */}
-        </header>
-
+    
+     <Layout>
         {/* Page Content */}
         <main className="flex-1 px-6 pb-12 lg:px-16 pt-6 overflow-y-auto mx-auto">
           <div className="w-full max-w-2xl mb-4">
@@ -568,8 +505,8 @@ const Bannar = ({ lang, dictionary }: Props) => {
               </div>
           </div>
         </main>
-      </div>
-    </div>
+        </Layout>
+      
   );
 };
 
