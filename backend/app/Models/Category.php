@@ -63,4 +63,14 @@ class Category extends Model
             }
         });
     }
+
+    public function image()
+    {
+        return $this->morphOne(Attachment::class, 'attachmentable');
+    }
+
+    public function attachments()
+    {
+        return $this->morphMany(Attachment::class, 'attachmentable');
+    }
 }

@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\CityController;
+use App\Http\Controllers\Api\CountryController;
+use App\Http\Controllers\Api\PriceController;
+use App\Http\Controllers\Api\StateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +41,24 @@ Route::prefix('v1')->group(function () {
 
         // Public category routes
         Route::get('categories', [CategoryController::class, 'index']);
+        Route::get('prices', [PriceController::class, 'index']);
+        // Countries
+        Route::prefix('countries')->group(function () {
+            Route::get('/', [CountryController::class, 'index']); // List all countries, with filters
+            Route::get('{id}', [CountryController::class, 'show']); // Get country by ID with states & cities
+        });
+
+        // States
+        Route::prefix('states')->group(function () {
+            Route::get('/', [StateController::class, 'index']); // List all states, filterable by country_id, name, iso2
+            Route::get('{id}', [StateController::class, 'show']); // Get state by ID with cities
+        });
+
+        // Cities
+        Route::prefix('cities')->group(function () {
+            Route::get('/', [CityController::class, 'index']); // List all cities, filterable by country_id, state_id, name
+            Route::get('{id}', [CityController::class, 'show']); // Get city by ID with state & country
+        });
         /*
     |--------------------------------------------------------------------------
     | User Routes
@@ -57,11 +79,18 @@ Route::prefix('v1')->group(function () {
             // Category Routes
             Route::prefix('categories')->group(function () {
                 Route::post('store', [CategoryController::class, 'store']);
-                Route::put('update/{id}', [CategoryController::class, 'update']);
+                Route::post('update', [CategoryController::class, 'update']);
                 Route::get('show/{id}', [CategoryController::class, 'show']);
                 Route::delete('destroy/{id}', [CategoryController::class, 'destroy']);
                 Route::post('{id}/restore', [CategoryController::class, 'restore']);
                 Route::delete('{id}/force', [CategoryController::class, 'forceDelete']);
+            });
+
+            Route::prefix('prices')->group(function () {
+                Route::get('{id}', [PriceController::class, 'show']);
+                Route::post('/', [PriceController::class, 'store']);
+                Route::put('{id}', [PriceController::class, 'update']);
+                Route::delete('{id}', [PriceController::class, 'destroy']);
             });
         });
 

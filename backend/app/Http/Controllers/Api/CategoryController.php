@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Services\AttachmentService;
 use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
@@ -83,8 +84,8 @@ class CategoryController extends Controller
             $data = $request->validate([
                 'code' => 'required|unique:categories,code',
                 'parent_id' => 'nullable|exists:categories,id',
-                'name_en' => 'required|string',
-                'name_bn' => 'nullable|string',
+                'name_en' => 'required|string|unique:categories,name_en',
+                'name_bn' => 'nullable|string|unique:categories,name_bn',
                 'description_en' => 'nullable|string',
                 'description_bn' => 'nullable|string',
                 'is_active' => 'boolean',
@@ -93,6 +94,11 @@ class CategoryController extends Controller
             $data['is_active'] = $data['is_active'] ?? true;
 
             $category = Category::create($data);
+
+            if ($request->image) {
+                $category_image = $this->uploadFile($request->image, 'categories');
+                $category->image()->create(['url' => $category_image, 'alt' => 'category image',]);
+            }
 
             DB::commit();
             return response()->json(['status'=>true,'message'=>'Category created','data'=>$this->formatCategory($category)],201);
@@ -103,28 +109,44 @@ class CategoryController extends Controller
     }
 
     // Update category
-    public function update(Request $request,$id)
+    public function update(Request $request)
     {
         DB::beginTransaction();
         try {
-            $category = Category::findOrFail($id);
+            $category = Category::findOrFail($request->id);
 
             $data = $request->validate([
-                'code' => 'sometimes|required|unique:categories,code,'.$id,
+                'id' => 'required|exists:categories,id',
+                'code' => 'sometimes|required|unique:categories,code,' . $category->id,
                 'parent_id' => 'nullable|exists:categories,id',
                 'name_en' => 'sometimes|required|string',
                 'name_bn' => 'nullable|string',
                 'description_en' => 'nullable|string',
                 'description_bn' => 'nullable|string',
-                'is_active' => 'boolean',
             ]);
 
-            $data['is_active'] = $data['is_active'] ?? $category->is_active;
+            $data['is_active'] = $request->is_active === 'true' ? true : false ?? $category->is_active;
 
             $category->update($data);
 
+            if ($request->hasFile('image')) {
+                $category_image = $this->uploadFile($request->image, 'categories');
+                if ($category->image) {
+                    $this->deleteFile('categories', $category->image->url);
+                    $category->image()->update(['url' => $category_image, 'alt' => 'category image',]);
+                } else {
+                    $category->image()->create(['url' => $category_image, 'alt' => 'category image',]);
+                }
+            } else if ($request->image == null){
+                if ($category->image) {
+                    $this->deleteFile('categories', $category->image->url);
+                    $category->image->delete();
+                }
+            }
+
             DB::commit();
-            return response()->json(['status'=>true,'message'=>'Category updated','data'=>$this->formatCategory($category)],200);
+            $updated_category = Category::find($request->id);
+            return response()->json(['status'=>true,'message'=>'Category updated','data'=>$this->formatCategory($updated_category)],200);
         } catch (\Exception $e) {
             DB::rollBack();
             return response()->json(['status'=>false,'message'=>$e->getMessage()],500);
@@ -137,9 +159,12 @@ class CategoryController extends Controller
         DB::beginTransaction();
         try {
             $category = Category::findOrFail($id);
+            if ($category->image) {
+                $this->deleteFile('categories', $category->image->url);
+            }
             $category->delete();
             DB::commit();
-            return response()->json(['status'=>true,'message'=>'Category soft deleted'],200);
+            return response()->json(['status'=>true,'message'=>'Category deleted'],200);
         } catch (\Exception $e) {
             DB::rollBack();
             return response()->json(['status'=>false,'message'=>$e->getMessage()],500);
@@ -190,6 +215,7 @@ class CategoryController extends Controller
             'description_bn'=>$category->description_bn,
             'is_active'=>$category->is_active == 1 ? true : false,
             'children'=>$category->children->map(fn($c) => $this->formatCategory($c)),
+            'image'=>$category->image ? asset('storage/categories/'.$category->image->url) : null
         ];
     }
 }
