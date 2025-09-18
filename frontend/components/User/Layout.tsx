@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,8 +12,9 @@ interface LayoutProps {
 const menuItems = [
   { label: "Dashboard", href: "/user-dashboard" },
   { label: "New Orders", href: "/add-order-category" },
-  { label: "Profile", href: "#" },
-  { label: "Settings", href: "#" },
+  { label: "Order List", href: "/order-list" },
+  { label: "Profile", href: "/profile" },
+  { label: "Settings", href: "/settings" },
 ];
 
 export default function Layout({ children }: LayoutProps) {
@@ -35,12 +36,12 @@ export default function Layout({ children }: LayoutProps) {
         </div>
         <nav className="p-4 space-y-2">
           {menuItems.map((item, i) => {
-            const isActive = pathname === item.href;
+            const isActive = pathname.startsWith(item.href);
             return (
               <Link
                 key={i}
                 href={item.href}
-                className={`block px-3 py-2 rounded-lg ${
+                className={`block px-3 py-2 rounded-lg transition ${
                   isActive
                     ? "bg-gray-200 text-gray-900 font-semibold"
                     : "text-gray-700 hover:bg-gray-100"
@@ -56,11 +57,16 @@ export default function Layout({ children }: LayoutProps) {
       {/* Main Area (Header + Content) */}
       <div className="flex-1 flex flex-col lg:ml-64">
         {/* Header */}
-        <header className="sticky top-0 z-40 bg-white shadow-lg h-16 flex items-center px-6 lg:px-16">
+        <header className="sticky top-0 z-40 bg-white shadow-lg h-16 flex justify-end items-center px-6 lg:px-16">
           <button className="mr-4 lg:hidden" onClick={() => setSidebarOpen(true)}>
             <Menu className="w-6 h-6 text-gray-700" />
           </button>
-          <h1 className="text-xl font-bold text-gray-900">Name</h1>
+          <div className="flex justify-start gap-2 items-center">
+            <p className="text-[14px] font-mikado-regular font-bold text-gray-900 cursor-pointer">
+              Name
+            </p>
+            <ChevronDown className="text-gray-700 w-4" />
+          </div>
         </header>
 
         {/* Page Content */}

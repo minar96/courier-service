@@ -197,5 +197,18 @@
     "weight":"Product Weight",
     "shiping":"Shiping Cost",
     "button":"Pay Now"
+  },
+  "userDashboard":{
+    "title":"Dashboard",
+    "order":"New Order",
+    "shipment":"Number of shipment",
+    "receiver":"Do not find receiver",
+    "return":"Number of return",
+    "count":"Number of order",
+    "manager": "Your account manager",
+    "call":"Give a call"
+  },
+  "orderList":{
+    "title":"Order List"
   }
 }

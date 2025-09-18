@@ -41,6 +41,8 @@ const ClientContend = ({ children, lang, dictionary, params }: Props) => {
     "/bn/checkout",
     "/en/user-dashboard",
     "/bn/user-dashboard",
+    "/en/order-list",
+    "/bn/order-list",
   ]; // change based on your routes
   const hideHeader = noHeaderPages.includes(pathname);
   const noFooterPages = [
@@ -52,6 +54,8 @@ const ClientContend = ({ children, lang, dictionary, params }: Props) => {
     "/bn/checkout",
     "/en/user-dashboard",
     "/bn/user-dashboard",
+    "/en/order-list",
+    "/bn/order-list",
   ]; // change based on your routes
   const hideFooter = noFooterPages.includes(pathname);
 
