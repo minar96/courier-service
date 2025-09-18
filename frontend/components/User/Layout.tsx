@@ -13,13 +13,17 @@ const menuItems = [
   { label: "Dashboard", href: "/user-dashboard" },
   { label: "New Orders", href: "/add-order-category" },
   { label: "Order List", href: "/order-list" },
-  { label: "Profile", href: "/profile" },
+  { label: "Tracking", href: "/profile" },
   { label: "Settings", href: "/settings" },
 ];
 
 export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
+
+  // Normalize paths (remove trailing slashes)
+  const normalize = (p: string) => p.replace(/\/+$/, "");
+  const current = normalize(pathname);
 
   return (
     <div className="flex min-h-screen">
@@ -34,16 +38,25 @@ export default function Layout({ children }: LayoutProps) {
             <X className="w-6 h-6 text-gray-700" />
           </button>
         </div>
+
         <nav className="p-4 space-y-2">
           {menuItems.map((item, i) => {
-            const isActive = pathname.startsWith(item.href);
+            const href = normalize(item.href);
+
+            // robust active check:
+            const isActive =
+              current === href || // exact match
+              current.startsWith(href + "/") || // nested route (e.g. /user-dashboard/settings)
+              current.endsWith(href); // covers prefixed locales like /en/user-dashboard
+
             return (
               <Link
                 key={i}
                 href={item.href}
-                className={`block px-3 py-2 rounded-lg transition ${
+                aria-current={isActive ? "page" : undefined}
+                className={`block px-3 py-2 rounded-lg transition flex items-center gap-2 ${
                   isActive
-                    ? "bg-gray-200 text-gray-900 font-semibold"
+                    ? "bg-[#f97075] text-white font-semibold border-l-4 border-[#b3181b] pl-3"
                     : "text-gray-700 hover:bg-gray-100"
                 }`}
               >
@@ -54,9 +67,8 @@ export default function Layout({ children }: LayoutProps) {
         </nav>
       </div>
 
-      {/* Main Area (Header + Content) */}
+      {/* Main Area */}
       <div className="flex-1 flex flex-col lg:ml-64">
-        {/* Header */}
         <header className="sticky top-0 z-40 bg-white shadow-lg h-16 flex justify-end items-center px-6 lg:px-16">
           <button className="mr-4 lg:hidden" onClick={() => setSidebarOpen(true)}>
             <Menu className="w-6 h-6 text-gray-700" />
@@ -69,9 +81,7 @@ export default function Layout({ children }: LayoutProps) {
           </div>
         </header>
 
-        {/* Page Content */}
         {children}
-        
       </div>
     </div>
   );

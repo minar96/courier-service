@@ -210,8 +210,20 @@
     "manager": "আপনার অ্যাকাউন্ট ম্যানেজার",
     "call": "কল করুন"
   },
-  "orderList":{
-    "title":"Order List"
+  "orderList": {
+    "title": "অর্ডার তালিকা",
+    "search": "খুঁজুন",
+    "sl": "ক্রমিক নং",
+    "orderdate": "অর্ডারের তারিখ",
+    "orderid": "অর্ডার আইডি",
+    "receiverInfo": "প্রাপকের তথ্য",
+    "payInfo": "পেমেন্ট তথ্য",
+    "deliveryStatus": "ডেলিভারির অবস্থা",
+    "infoChange": "তথ্য পরিবর্তন",
+    "edit": "এডিট",
+    "delete": "অর্ডার মুছুন",
+    "invoice": "ইনভয়েস"
   }
+
 
 }

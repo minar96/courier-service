@@ -80,8 +80,8 @@ const fredoka = Fredoka({
 });
 
 export const metadata: Metadata = {
-  title: "Kiddoz",
-  description: "Project by HelloBARC",
+  title: "Courier and Logistics",
+  description: "Project by Courier and Logistics",
 };
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));

@@ -209,6 +209,17 @@
     "call":"Give a call"
   },
   "orderList":{
-    "title":"Order List"
+    "title":"Order List",
+    "search":"Search",
+    "sl":"SL No",
+    "orderdate":"Order Data",
+    "orderid":"Order ID",
+    "receiverInfo": "Receiver Info",
+    "payInfo":"Payment Info",
+    "deliveryStatus":"Delivery Status",
+    "infoChange":"Info Change",
+    "edit":"Edit",
+    "delete":"Order Delete",
+    "invoice":"Invoice"
   }
 }
