@@ -6,19 +6,27 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Price extends Model
+class Receiver extends Model
 {
     use HasFactory, SoftDeletes;
 
-     protected $fillable = [
+    protected $fillable = [
+        'user_id',
+        'name',
+        'mobile_no',
+        'email',
+        'address',
         'country_id',
         'state_id',
         'city_id',
-        'price',
-        'weight',
     ];
 
     // Relationships
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function country()
     {
         return $this->belongsTo(Country::class);
@@ -32,5 +40,10 @@ class Price extends Model
     public function city()
     {
         return $this->belongsTo(City::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
     }
 }

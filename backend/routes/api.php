@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CityController;
 use App\Http\Controllers\Api\CountryController;
+use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\PriceController;
 use App\Http\Controllers\Api\StateController;
 use Illuminate\Http\Request;
@@ -58,6 +59,16 @@ Route::prefix('v1')->group(function () {
         Route::prefix('cities')->group(function () {
             Route::get('/', [CityController::class, 'index']); // List all cities, filterable by country_id, state_id, name
             Route::get('{id}', [CityController::class, 'show']); // Get city by ID with state & country
+        });
+
+        Route::prefix('orders')->group(function () {
+            Route::get('/', [OrderController::class, 'index']);
+            Route::post('/', [OrderController::class, 'store']);
+            Route::get('{id}', [OrderController::class, 'show']);
+            Route::put('{id}', [OrderController::class, 'update']);
+            Route::delete('{id}', [OrderController::class, 'destroy']);
+            Route::post('{id}/restore', [OrderController::class, 'restore']);
+            Route::post('{id}/status', [OrderController::class, 'updateStatus']);
         });
         /*
     |--------------------------------------------------------------------------
