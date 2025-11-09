@@ -1,21 +1,18 @@
-import Hero from "@/components/Login/Bannar";
+import { getDictionary } from '@/get-dictionary';
+import LoginForm from '@/components/Login/LoginForm';
+import type { Locale } from "@/i18n-config";
 
-import { Footer, Header } from "@/components/Layouts";
-import { Locale } from "@/i18n-config";
-import { getDictionary } from "@/get-dictionary";
+export default async function LoginPage({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}) {
+  const { lang } = await params;
+  const dictionary = await getDictionary(lang);
 
-const LoginPage = async (props: { params: Promise<{ lang: Locale }> }) => {
-    const { lang } = await props.params;
-    const dictionary = await getDictionary(lang);
   return (
-    <>
-        
-        <div id="LoginHero" className="w-full bg-[#fff4e33d]">
-            <Hero lang={lang} dictionary={dictionary}/>
-        </div>
-       
-    </>
-    );
-};
-
-export default LoginPage;
+    <div className="min-h-screen bg-[#fff4e33d]">
+      <LoginForm dictionary={dictionary} lang={lang} />
+    </div>
+  );
+}

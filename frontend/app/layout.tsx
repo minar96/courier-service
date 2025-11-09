@@ -2,6 +2,7 @@ import "./globals.css";
 import React from "react";
 import { Metadata } from "next";
 import { i18n, type Locale } from "@/i18n-config";
+import { ReduxProvider } from '../src/providers/ReduxProvider';
 
 // Fonts
 import localFont from "next/font/local";
@@ -95,21 +96,14 @@ export default function RootLayout({
   params: any;
 }) {
   return (
-    // <html lang={params.lang}>
-    //   <body
-    //     className={`${inter.variable} ${geistSans.variable} ${geistMono.variable} ${fredoka.variable} ${garet.variable} ${peaceSans.variable} 
-    //     ${bukhariScript.variable} w-screen h-screen antialiased`}
-    //   >
-    //     {children}
-    //   </body>
-    // </html>
     <html lang={params?.lang || 'bn'}>
       <body
         className={`${inter.variable} ${geistSans.variable} ${geistMono.variable} ${fredoka.variable} ${garet.variable} ${peaceSans.variable} ${bukhariScript.variable} min-h-screen w-full antialiased`}
       >
-        {children}
+        <ReduxProvider>
+          {children}
+        </ReduxProvider>
       </body>
     </html>
-
   );
 }

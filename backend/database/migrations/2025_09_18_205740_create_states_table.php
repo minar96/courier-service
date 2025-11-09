@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('states', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('mobile_no')->unique();
-            $table->string('email')->unique()->nullable();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->tinyInteger('status')->default(1)->comment('0=inactive,1=active,2=suspended,3=deleted');
+            $table->string('iso2', 100)->nullable();
+            $table->string('iso3166_2', 100)->nullable();
+            $table->foreignId('country_id')->constrained('countries')->cascadeOnDelete();
+            $table->boolean('is_active')->default(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('states');
     }
 };

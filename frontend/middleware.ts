@@ -22,6 +22,7 @@ function getLocale(request: NextRequest): string {
 }
 
 export async function middleware(request: NextRequest) {
+  const token = request.cookies.get("token")?.value;
   const pathname = request.nextUrl.pathname;
 
   // Check if there is any supported locale in the pathname
@@ -48,6 +49,10 @@ export async function middleware(request: NextRequest) {
     );
   }
 
+  if (!token && !request.nextUrl.pathname.startsWith("/")) {
+    return NextResponse.redirect(new URL("/", request.url));
+  }
+
   return NextResponse.next();
 }
 
@@ -56,6 +61,7 @@ export const config = {
     "/",
     "/dashboard",
     "/dashboard/:path*",
+    "/profile/:path*",
     "/((?!api|login|register|forget-password|blog|blog/:path*|terms-of-service|privacy-policy|about-us|contact-us|_next/static|_next/image|auth|favicon.ico|robots.txt|images|assets|$).*)",
   ],
 };
