@@ -2,23 +2,37 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 import { i18n } from "./i18n-config";
-import { match as matchLocale } from "@formatjs/intl-localematcher";
-import Negotiator from "negotiator";
+
+function parseAcceptLanguage(header?: string | null): string[] {
+  if (!header) return [];
+  return header
+    .split(",")
+    .map((part) => part.split(";")[0].trim())
+    .filter(Boolean);
+}
 
 function getLocale(request: NextRequest): string {
-  const negotiatorHeaders: Record<string, string> = {};
-  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
+  const header = request.headers.get("accept-language");
+  const languages = parseAcceptLanguage(header);
 
+  // ensure locales array
   // @ts-ignore
-  const locales: string[] = i18n.locales;
+  const locales: string[] = Array.isArray(i18n.locales)
+    ? i18n.locales
+    : [i18n.defaultLocale];
 
-  let languages = new Negotiator({ headers: negotiatorHeaders }).languages(
-    locales
-  );
+  for (const lang of languages) {
+    // exact match
+    if (locales.includes(lang)) return lang;
+    // match primary subtag (e.g. "en-US" -> "en")
+    const primary = lang.split("-")[0];
+    const found = locales.find(
+      (l) => l === primary || l.startsWith(primary)
+    );
+    if (found) return found;
+  }
 
-  const locale = matchLocale(languages, locales, i18n.defaultLocale);
-
-  return locale;
+  return i18n.defaultLocale;
 }
 
 export async function middleware(request: NextRequest) {
@@ -29,18 +43,6 @@ export async function middleware(request: NextRequest) {
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
-
-  // Redirect if no locale is found in the pathname
-  // if (pathnameIsMissingLocale) {
-  //   const locale = getLocale(request);
-
-  //   return NextResponse.redirect(
-  //     new URL(
-  //       `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
-  //       request.url
-  //     )
-  //   );
-  // }
 
   if (pathnameIsMissingLocale) {
     const defaultLocale = i18n.defaultLocale; // 'bn'
