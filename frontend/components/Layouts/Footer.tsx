@@ -97,54 +97,54 @@ const Footer = ({ className, dictionary, params }: Props) => {
           </h4>
           <p className="text-sm">
             
-            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Bangladesh’s fastest growing courier service for merchants.</span>
+            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.footer.subTitle}</span>
           </p>
         </div>
         <div>
           <h4 className="font-semibold mb-3 text-white">
-            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Products</span>
+            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>{dictionary.footer.product}</span>
           </h4>
           <ul className="space-y-2 text-sm">
             <li><a href="#" className="hover:text-white">
-              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Shipment</span>
+              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.footer.product1}</span>
               </a></li>
-            <li><a href="#" className="hover:text-white">
+            {/* <li><a href="#" className="hover:text-white">
               <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>COD Services</span>
-              </a></li>
+              </a></li> */}
             <li><a href="#" className="hover:text-white">
-              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Rate Calculator</span>
+              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.footer.product2}</span>
               </a></li>
           </ul>
         </div>
         <div>
           <h4 className="font-semibold mb-3 text-white">
-            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Company</span>
+            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>{dictionary.footer.company}</span>
           </h4>
           <ul className="space-y-2 text-sm">
             <li><a href="#" className="hover:text-white">
-              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>About</span>
+              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.footer.company1}</span>
               </a></li>
             <li><a href="#" className="hover:text-white">
-              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Contact</span>
+              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.footer.company2}</span>
               </a></li>
-            <li><a href="#" className="hover:text-white">
+            {/* <li><a href="#" className="hover:text-white">
               <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Blog</span>
-              </a></li>
+              </a></li> */}
           </ul>
         </div>
         <div>
           <h4 className="font-semibold mb-3 text-white">
-            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>Support</span>
+            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>{dictionary.footer.support}</span>
           </h4>
           <ul className="space-y-2 text-sm">
             <li><a href="#" className="hover:text-white">
-              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Help Center</span>
+              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.footer.support1}</span>
               </a></li>
             <li><a href="#" className="hover:text-white">
-              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>FAQ</span>
+              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.footer.support2}</span>
               </a></li>
             <li><a href="#" className="hover:text-white">
-              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Terms</span>
+              <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.footer.suppert3}</span>
               </a></li>
           </ul>
         </div>

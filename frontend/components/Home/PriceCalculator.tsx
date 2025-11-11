@@ -14,9 +14,9 @@ interface Props {
   dictionary: Awaited<ReturnType<typeof getDictionary>>;
 }
 
-const Coverage = ({ lang, dictionary }: Props) => {
+const PriceCalculator = ({ lang, dictionary }: Props) => {
   return (
-        <Wrapper className="w-full grid grid-cols-1 lg:grid-cols-1 gap-4 mt-[54px] 2xl:mt-[120px] xl:mt-[120px] lg:mt-[120px] md:mt-[120px] pb-[44px] 2xl:pb-[120px] xl:pb-[120px] lg:pb-[120px] md:pb-[120px]"> 
+        <Wrapper className="w-full grid grid-cols-1 lg:grid-cols-1 gap-4 pb-[44px] 2xl:pb-[120px] xl:pb-[120px] lg:pb-[120px] md:pb-[120px]"> 
             <div className="w-full px-5 2xl:px-0 xl:px-0 lg:px-6 md:px-0">
                 {/* <h1 className="text-[#4C4C4C] text-[36px] 2xl:text-[54px] xl:text-[54px] text-left 2xl:text-left xl:text-left lg:text-center md:text-center lg:text-[42px] md:text-[42px] 
                 font-[900] font-mikado-medium leading-[50.2px] 2xl:leading-[70.2px] xl:leading-[70.2px] lg:leading-[70.2px] md:leading-[70.2px] mt-[44px] 2xl:mt-[120px] xl:mt-[120px] lg:mt-[100px] md:mt-[100px]">
@@ -154,52 +154,43 @@ const Coverage = ({ lang, dictionary }: Props) => {
                         </div>
                     </Link>
                 </div> */}
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 items-center">
+                <div className="">
                     <div>
                         <h2 className="text-2xl md:text-3xl font-bold">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>{dictionary.coverage.title}</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}>{dictionary.PriceCalculator.title}</span>
                         </h2>
                         <p className="mt-3 text-zinc-600 max-w-xl">
                             
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.coverage.subTitle}</span>
+                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.PriceCalculator.subTitle}</span>
                         </p>
-                        <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-3">
-                        <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> {dictionary.coverage.country1}</span>
-                        </div>
-                        <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> {dictionary.coverage.country2}</span>
-                        </div>
-                        <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> {dictionary.coverage.country3}</span>
-                        </div>
-                        <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> {dictionary.coverage.country4}</span>
-                        </div>
-                        <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> {dictionary.coverage.country5}</span>
-                        </div>
-                        <div className="rounded-xl border border-[#d5d5d5] px-3 py-2 text-sm text-zinc-700">
-                            <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}> {dictionary.coverage.country6}</span>
-                        </div>
-                        </div>
-                    </div>
-                    <div className="rounded-3xl p-1 bg-[#fde7d6]">
-                        <div className="rounded-3xl p-3 bg-white flex items-center justify-center shadow-xl">
-                            <Image
-                                src="/assets/img/home/coverage.jpg"
-                                alt="Loading"
-                                width={400}
-                                height={250}
-                                className="w-full object-cover mx-auto rounded-3xl"
-                            />
+                        <div className="w-full grid grid-cols-1 lg:grid-cols-4 gap-4 mt-[44px] items-center">
+                            <div>
+                                <label htmlFor="" className="text-[10px] text-[#999999]">{dictionary.PriceCalculator.weight}</label><br />
+                                <input type="text" name="" id="" className="w-full mt-2 border border-gray-300 rounded-[8px] px-2 py-[12px] focus:outline-none focus:ring-0 focus:border-gray-300" placeholder="Enter your product weight"/>
+                            </div>
+                            <div>
+                                <label htmlFor="" className="text-[10px] text-[#999999]">{dictionary.PriceCalculator.country}</label><br />
+                                <select name="" id=""  className="w-full mt-2 border border-gray-300 rounded-[8px] px-2 py-[12px] focus:outline-none focus:ring-0 focus:border-gray-300">
+                                    <option value="0" selected>Select country</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label htmlFor="" className="text-[10px] text-[#999999]">{dictionary.PriceCalculator.city}</label><br />
+                               <select name="" id=""  className="w-full mt-2 border border-gray-300 rounded-[8px] px-2 py-[12px] focus:outline-none focus:ring-0 focus:border-gray-300">
+                                    <option value="0" selected>Select country</option>
+                                </select>
+                            </div>
+                            <div>
+                                 <button className="rounded-2xl h-13 px-6 bg-[#ff7a00] text-white mt-[24px] cursor-pointer">
+                                    <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.PriceCalculator.button}</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    </div>
+                </div>
             </div> 
         </Wrapper>
     );
 };
-export default Coverage;
+export default PriceCalculator;

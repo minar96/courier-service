@@ -25,19 +25,19 @@ const StartShipping = ({ lang, dictionary }: Props) => {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-6 items-center py-16">
       <div>
         <h3 className="text-2xl md:text-3xl font-bold text-white">
-          <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}> Start shipping today</span>
+          <span className={lang === 'bn' ? 'font-noto-sans-medium' : 'font-mikado-medium'}> {dictionary.startShiping.title}</span>
         </h3>
         <p className="mt-2 text-zinc-300">
           
-          <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Create a free account in minutes. No setup fees, no commitments.</span>
+          <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.startShiping.subTitle}</span>
           </p>
       </div>
       <div className="flex md:justify-end gap-3">
         <button className="rounded-2xl h-9 px-6 bg-[#ff7a00] text-white">
-          <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Open Account</span>
+          <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.startShiping.order}</span>
         </button>
         <button className="rounded-2xl h-9 px-6 bg-white text-[#0e1b2a]">
-           <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>Talk to Sales</span>
+           <span className={lang === 'bn' ? 'font-noto-sans-regular' : 'font-mikado-regular'}>{dictionary.startShiping.account}</span>
         </button>
       </div>
     </div>
