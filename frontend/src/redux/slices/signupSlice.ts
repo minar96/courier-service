@@ -11,7 +11,7 @@ export const signupUser = createAsyncThunk(
   'signup/signupUser',
   async (userData: SignupPayload, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:8000/v1/signup', userData);
+      const response = await axios.post('http://localhost:8000/api/v1/register', userData);
       return response.data;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.message || 'Signup failed');

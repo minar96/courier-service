@@ -19,10 +19,11 @@ class AuthController extends Controller
     // ---------------- Registration ----------------
     public function register(Request $request)
     {
+        //dd($request->all());
         $request->validate([
             'name' => 'required|string|max:255',
-            'mobile_no' => 'required|string|unique:users,mobile_no',
-            'password' => 'required|string|min:6|confirmed',
+            'phone' => 'required|string|unique:users,mobile_no',
+            'password' => 'required|min:6',
             'role_id' => 'nullable|exists:roles,id'
         ]);
 
@@ -30,7 +31,7 @@ class AuthController extends Controller
         try {
             $user = User::create([
                 'name' => $request->name,
-                'mobile_no' => $request->mobile_no,
+                'mobile_no' => $request->phone,
                 'password' => Hash::make($request->password),
                 'role_id' => $request->role_id ?? Role::where('name', 'user')->value('id')
             ]);

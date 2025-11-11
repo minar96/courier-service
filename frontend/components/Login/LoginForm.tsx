@@ -35,7 +35,7 @@ const LoginForm = ({ lang, dictionary }: Props) => {
   const router = useRouter();
   const { loading, error } = useAppSelector((state) => state.auth);
   const [formData, setFormData] = useState({
-    email: "",
+    mobile_no: "",
     password: "",
   });
   const [isClient, setIsClient] = useState(false);
@@ -56,7 +56,7 @@ const LoginForm = ({ lang, dictionary }: Props) => {
 
     const result = await dispatch(
       loginUser({
-        email: formData.email,
+        mobile_no: formData.mobile_no,
         password: formData.password,
       })
     );
@@ -134,12 +134,12 @@ const LoginForm = ({ lang, dictionary }: Props) => {
                   </span>
                 </label>
                 <input
-                  id="email"
-                  name="email"
-                  type="email"
+                  id="mobile_no"
+                  name="mobile_no"
+                  type="text"
                   placeholder={dictionary.login.mobilePlaceholder}
                   required
-                  value={formData.email}
+                  value={formData.mobile_no}
                   onChange={handleChange}
                   className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-300 focus:ring-gray-300 sm:text-sm"
                 />

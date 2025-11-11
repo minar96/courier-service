@@ -17,9 +17,9 @@ const initialState: AuthState = {
 
 export const loginUser = createAsyncThunk(
   'auth/login',
-  async (credentials: { email: string; password: string }, { rejectWithValue }) => {
+  async (credentials: { mobile_no: string; password: string }, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:8000/v1/login', credentials);
+      const response = await axios.post('http://localhost:8000/api/v1/login', credentials);
       return response.data;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.message || 'Login failed');

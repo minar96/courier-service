@@ -183,7 +183,7 @@ const Bannar = ({ lang, dictionary }: Props) => {
 
       <div className="relative hidden w-0 flex-1 lg:block">
         <Image
-          src="/assets/img/signup/signup-banner.jpg"
+          src="/assets/img/login/login-main.jpg"
           alt="Signup banner"
           fill
           style={{ objectFit: 'cover' }}
