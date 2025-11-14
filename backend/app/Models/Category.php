@@ -15,12 +15,10 @@ class Category extends Model
 
     protected $fillable = [
         'code',
-        'parent_id',
         'name_en',
         'name_bn',
         'slug',
-        'description_en',
-        'description_bn',
+        'file_id',
         'is_active',
     ];
 

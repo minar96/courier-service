@@ -10,12 +10,8 @@ class Attachment extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'attachmentable_type',
-        'attachmentable_id',
         'url',
         'alt',
-        'position',
-        'rank',
     ];
 
     public function attachmentable(): MorphTo
