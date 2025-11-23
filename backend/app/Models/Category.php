@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class Category extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     protected $table = 'categories';
 
@@ -25,18 +25,6 @@ class Category extends Model
     protected $casts = [
         'is_active' => 'boolean',
     ];
-
-    // 🔹 Parent category
-    public function parent()
-    {
-        return $this->belongsTo(Category::class, 'parent_id');
-    }
-
-    // 🔹 Children categories
-    public function children()
-    {
-        return $this->hasMany(Category::class, 'parent_id');
-    }
 
     // 🔹 Scope: Active categories
     public function scopeActive($query)
@@ -62,13 +50,23 @@ class Category extends Model
         });
     }
 
-    public function image()
-    {
-        return $this->morphOne(Attachment::class, 'attachmentable');
-    }
-
     public function attachments()
     {
-        return $this->morphMany(Attachment::class, 'attachmentable');
+        return $this->hasMany(Attachment::class, 'file_id', 'id');
     }
+
+    public function image()
+    {
+        return $this->belongsTo(Attachment::class, 'file_id');
+    }
+
+    protected $appends = ['image_url'];
+
+    public function getImageUrlAttribute()
+    {
+        return $this->file_id && $this->image
+            ? Storage::disk('public')->url($this->image->url)
+            : null;
+    }
+
 }

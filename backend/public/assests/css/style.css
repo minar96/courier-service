@@ -1,0 +1,39 @@
+:root {
+    --sidebar-expanded: 16rem; /* 256px  */
+    --sidebar-collapsed: 4rem; /* 64px   */
+}
+
+/* Desktop layout defaults */
+@media (min-width: 768px) {
+    #sidebar {
+        width: var(--sidebar-expanded);
+    }
+
+    #topbar {
+        left: var(--sidebar-expanded);
+    }
+
+    body.sidebar-collapsed #sidebar {
+        width: var(--sidebar-collapsed);
+    }
+
+    body.sidebar-collapsed #topbar {
+        left: var(--sidebar-collapsed);
+    }
+
+    /* hide labels & logo when collapsed */
+    body.sidebar-collapsed #sidebar .menu-label,
+    body.sidebar-collapsed #sidebar .logo-text {
+        display: none;
+    }
+
+    /* NEVER show submenu in collapsed mode */
+    body.sidebar-collapsed #sidebar .submenu {
+        display: none !important;
+    }
+}
+
+/* make submenu animatable by default */
+.submenu {
+    display: none;
+}

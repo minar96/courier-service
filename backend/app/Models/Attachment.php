@@ -9,13 +9,9 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 class Attachment extends Model
 {
     use HasFactory;
+    
     protected $fillable = [
         'url',
         'alt',
     ];
-
-    public function attachmentable(): MorphTo
-    {
-        return $this->morphTo();
-    }
 }

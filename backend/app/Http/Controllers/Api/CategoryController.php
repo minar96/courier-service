@@ -9,6 +9,7 @@ use App\Helpers\FileHelper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL;
 
 class CategoryController extends Controller
 {
@@ -27,7 +28,7 @@ class CategoryController extends Controller
             $search  = $request->get('search');
             $perPage = $request->get('per_page', 10);
 
-            $query = Category::whereNull('parent_id');
+            $query = Category::query();
 
             if ($search) {
                 $query->where(function ($q) use ($search) {
@@ -101,7 +102,7 @@ class CategoryController extends Controller
 
             // If image uploaded, use FileHelper::uploadFile
             if ($request->hasFile('image')) {
-                $newAttachmentId = FileHelper::uploadFile($request->file('image'), 'category image');
+                $newAttachmentId = FileHelper::uploadFile($request->file('image'), 'image');
                 $data['file_id'] = $newAttachmentId;
             }
 
@@ -158,7 +159,7 @@ class CategoryController extends Controller
                 $newAttachmentId = FileHelper::updateFile(
                     $request->file('image'),
                     $category->file_id,
-                    'category image'
+                    'image'
                 );
 
                 $data['file_id'] = $newAttachmentId;
@@ -309,9 +310,7 @@ class CategoryController extends Controller
             'name_bn'   => $category->name_bn,
             'slug'      => $category->slug,
             'is_active' => (bool) $category->is_active,
-            'image'     => $category->file
-                ? asset('storage/' . $category->file->url) 
-                : null,
+            'image'     => $category->file_id ? Storage::disk('public')->url($category->image->url) : null,
         ];
     }
 }

@@ -1,99 +1,82 @@
-<aside x-data="{ sidebarOpen: true }"
-       class="bg-gray-800 text-white h-screen flex flex-col transition-all duration-300">
+<aside
+    id="sidebar"
+    class="fixed inset-y-0 left-0 bg-gray-900 text-gray-100
+           transform -translate-x-full md:translate-x-0 md:relative
+           z-30 w-64 md:w-auto transition-all duration-300 ease-in-out">
+    {{-- backdrop for mobile --}}
+    <div id="sidebarBackdrop" class="hidden fixed inset-0 bg-black bg-opacity-40 md:hidden z-20"></div>
 
-    <!-- Logo -->
+    {{-- Logo / header --}}
     <div class="flex items-center justify-between px-4 py-4 border-b border-gray-700">
-        <h1 :class="sidebarOpen ? 'opacity-100 duration-300' : 'opacity-0 w-0 overflow-hidden'" class="text-lg font-bold">My Admin</h1>
-        <button @click="sidebarOpen = !sidebarOpen" class="text-white focus:outline-none">
-            <i :class="sidebarOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
-        </button>
-    </div>
-
-    <!-- Menu -->
-    <nav class="flex-1 mt-4 overflow-y-auto">
-
-        <!-- Dashboard -->
-        <a href="{{ route('dashboard') }}"
-           class="flex items-center px-4 py-2 hover:bg-gray-700 transition-colors duration-200
-                  {{ request()->routeIs('dashboard') ? 'bg-gray-700' : '' }}">
-            <i class="fas fa-home w-5 text-center"></i>
-            <span x-show="sidebarOpen" class="ml-3 transition-all duration-300">Dashboard</span>
-        </a>
-
-        <!-- Users -->
-        <a href="{{ route('users.index') }}"
-           class="flex items-center px-4 py-2 hover:bg-gray-700 transition-colors duration-200
-                  {{ request()->routeIs('users.*') ? 'bg-gray-700' : '' }}">
-            <i class="fas fa-users w-5 text-center"></i>
-            <span x-show="sidebarOpen" class="ml-3 transition-all duration-300">Users</span>
-        </a>
-
-        <!-- Settings Dropdown -->
-        <div x-data="{ open: {{ request()->routeIs('settings.*') ? 'true' : 'false' }} }">
-            <button @click="open = !open"
-                    class="w-full flex items-center px-4 py-2 hover:bg-gray-700 focus:outline-none transition-colors duration-200
-                           {{ request()->routeIs('settings.*') ? 'bg-gray-700' : '' }}">
-                <i class="fas fa-cog w-5 text-center"></i>
-                <span x-show="sidebarOpen" class="ml-3 flex-1 text-left transition-all duration-300">Settings</span>
-                <i x-show="sidebarOpen" class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-            </button>
-
-            <!-- Submenu -->
-            <div x-show="open && sidebarOpen" x-transition:enter="transition ease-out duration-200"
-                 x-transition:enter-start="opacity-0 transform -translate-y-2"
-                 x-transition:enter-end="opacity-100 transform translate-y-0"
-                 x-transition:leave="transition ease-in duration-150"
-                 x-transition:leave-start="opacity-100 transform translate-y-0"
-                 x-transition:leave-end="opacity-0 transform -translate-y-2"
-                 class="ml-10 space-y-1 overflow-hidden">
-                <a href="{{ route('settings.general') }}"
-                   class="block px-2 py-1 text-sm hover:bg-gray-700 rounded
-                          {{ request()->routeIs('settings.general') ? 'bg-gray-700 font-semibold' : '' }}">
-                    General
-                </a>
-                <a href="{{ route('settings.security') }}"
-                   class="block px-2 py-1 text-sm hover:bg-gray-700 rounded
-                          {{ request()->routeIs('settings.security') ? 'bg-gray-700 font-semibold' : '' }}">
-                    Security
-                </a>
-            </div>
+        <div class="flex items-center space-x-2">
+            <span class="text-2xl">⚙️</span>
+            <span class="logo-text text-lg font-semibold">Admin Panel</span>
         </div>
 
-        {{-- <!-- Reports Dropdown -->
-        <div x-data="{ open: {{ request()->routeIs('reports.*') ? 'true' : 'false' }} }">
-            <button @click="open = !open"
-                    class="w-full flex items-center px-4 py-2 hover:bg-gray-700 focus:outline-none transition-colors duration-200
-                           {{ request()->routeIs('reports.*') ? 'bg-gray-700' : '' }}">
-                <i class="fas fa-chart-bar w-5 text-center"></i>
-                <span x-show="sidebarOpen" class="ml-3 flex-1 text-left transition-all duration-300">Reports</span>
-                <i x-show="sidebarOpen" class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-            </button>
+        {{-- mobile close --}}
+        <button id="closeSidebarBtn" class="md:hidden text-xl">✕</button>
+    </div>
 
-            <div x-show="open && sidebarOpen" x-transition:enter="transition ease-out duration-200"
-                 x-transition:enter-start="opacity-0 transform -translate-y-2"
-                 x-transition:enter-end="opacity-100 transform translate-y-0"
-                 x-transition:leave="transition ease-in duration-150"
-                 x-transition:leave-start="opacity-100 transform translate-y-0"
-                 x-transition:leave-end="opacity-0 transform -translate-y-2"
-                 class="ml-10 space-y-1 overflow-hidden">
-                <a href="{{ route('reports.sales') }}"
-                   class="block px-2 py-1 text-sm hover:bg-gray-700 rounded
-                          {{ request()->routeIs('reports.sales') ? 'bg-gray-700 font-semibold' : '' }}">
-                    Sales
-                </a>
-                <a href="{{ route('reports.users') }}"
-                   class="block px-2 py-1 text-sm hover:bg-gray-700 rounded
-                          {{ request()->routeIs('reports.users') ? 'bg-gray-700 font-semibold' : '' }}">
-                    Users
-                </a>
-                <a href="{{ route('reports.system') }}"
-                   class="block px-2 py-1 text-sm hover:bg-gray-700 rounded
-                          {{ request()->routeIs('reports.system') ? 'bg-gray-700 font-semibold' : '' }}">
-                    System
-                </a>
+    <nav class="px-2 py-4 space-y-1 text-sm">
+
+        @role('admin')
+        {{-- DASHBOARD --}}
+        <a href="{{ route('dashboard.index') }}"
+           class="flex items-center gap-3 px-3 py-2 rounded-lg
+                 {{ request()->routeIs('dashboard.index') ? 'bg-gray-800 text-white' : 'text-gray-300 hover:bg-gray-800 hover:text-white' }}">
+            <span class="w-5 text-lg">🏠</span>
+            <span class="menu-label font-medium">Dashboard</span>
+        </a>
+
+        {{-- USERS (PARENT WITH SUBMENU) --}}
+        <button type="button"
+                class="submenu-toggle flex w-full items-center justify-between gap-3 px-3 py-2 rounded-lg
+                       text-gray-300 hover:bg-gray-800 hover:text-white focus:outline-none"
+                data-target="#usersSubmenu">
+            <div class="flex items-center gap-3">
+                <span class="w-5 text-lg">👥</span>
+                <span class="menu-label font-medium">Category</span>
             </div>
-        </div> --}}
+            <svg class="submenu-arrow w-4 h-4 text-gray-400 transition-transform duration-200"
+                 fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+
+        {{-- USERS SUBMENU --}}
+        <div id="usersSubmenu" class="submenu pl-11 mt-1 space-y-1">
+            <a href="{{ route('categories.index') ?? '#' }}"
+               class="block px-2 py-1.5 rounded-md text-gray-300 hover:bg-gray-800 hover:text-white">
+                List
+            </a>
+        </div>
+
+        {{-- PRODUCTS --}}
+        <a href="#"
+           class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white">
+            <span class="w-5 text-lg">📦</span>
+            <span class="menu-label font-medium">Products</span>
+        </a>
+
+        {{-- REPORTS --}}
+        <a href="#"
+           class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white">
+            <span class="w-5 text-lg">📊</span>
+            <span class="menu-label font-medium">Reports</span>
+        </a>
+
+        {{-- SETTINGS --}}
+        <a href="#"
+           class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white">
+            <span class="w-5 text-lg">⚙️</span>
+            <span class="menu-label font-medium">Settings</span>
+        </a>
+        @endrole
 
     </nav>
 
+
+    {{-- backdrop for mobile --}}
+    <div id="sidebarBackdrop" class="hidden fixed inset-0 bg-black bg-opacity-40 md:hidden"></div>
 </aside>

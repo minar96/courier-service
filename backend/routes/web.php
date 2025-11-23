@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\SettingController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,15 +16,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
-Route::prefix('users')->group(function () {
-    Route::get('/', [UserController::class, 'index'])->name('users.index');
-    Route::get('/create', [UserController::class, 'create'])->name('users.create');
+Route::get('/', function () {
+    return view('welcome');
 });
 
-Route::prefix('settings')->group(function () {
-    Route::get('/general', [SettingController::class, 'general'])->name('settings.general');
-    Route::get('/security', [SettingController::class, 'security'])->name('settings.security');
+// ADMIN DASHBOARD
+Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
+    Route::prefix('admin')->group(function () {
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+
+
+        // CATEGORY
+        Route::prefix('categories')->group(function () {
+            Route::get('/', [CategoryController::class, 'index'])->name('categories.index');
+            Route::post('/', [CategoryController::class, 'store'])->name('categories.store');
+            Route::put('{category}', [CategoryController::class, 'update'])->name('categories.update');
+            Route::delete('{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+        });
+
+    });
 });
+
+
+require __DIR__.'/auth.php';
