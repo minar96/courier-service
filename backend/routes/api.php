@@ -28,6 +28,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('v1')->group(function () {
+    // Translation API routes (public)
+    Route::get('/translations', [App\Http\Controllers\Api\TranslationController::class, 'index']);
+    Route::get('/translations/{key}', [App\Http\Controllers\Api\TranslationController::class, 'show'])->where('key', '.*');
+    
     Route::post('/register', [AuthController::class, 'register']); // default user register
     Route::post('/login', [AuthController::class, 'login']);
     Route::post('/refresh', [AuthController::class, 'refreshToken']);

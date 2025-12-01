@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Translation routes (with SetLocale middleware)
+Route::middleware(['web', App\Http\Middleware\SetLocale::class])->group(function () {
+    Route::get('/translations', [App\Http\Controllers\Api\TranslationController::class, 'index']);
+    Route::get('/translations/{key}', [App\Http\Controllers\Api\TranslationController::class, 'show'])->where('key', '.*');
+});
+
+Route::middleware([App\Http\Middleware\SetLocale::class])->get('/', function () {
     return view('welcome');
 });

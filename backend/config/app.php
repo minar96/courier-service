@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'bn',
 
     /*
     |--------------------------------------------------------------------------
@@ -110,6 +110,18 @@ return [
     */
 
     'faker_locale' => 'en_US',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Supported Locales
+    |--------------------------------------------------------------------------
+    |
+    | This array contains all the locales supported by the application.
+    | These locales will be used for language switching and validation.
+    |
+    */
+
+    'supported_locales' => ['en', 'bn'],
 
     /*
     |--------------------------------------------------------------------------
