@@ -19,6 +19,8 @@ Route::middleware(['web', App\Http\Middleware\SetLocale::class])->group(function
     Route::get('/translations/{key}', [App\Http\Controllers\Api\TranslationController::class, 'show'])->where('key', '.*');
 });
 
-Route::middleware([App\Http\Middleware\SetLocale::class])->get('/', function () {
+
+
+Route::middleware(['web', App\Http\Middleware\SetLocale::class])->get('/', function () {
     return view('welcome');
 });

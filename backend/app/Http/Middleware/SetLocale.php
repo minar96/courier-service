@@ -18,18 +18,21 @@ class SetLocale
     {
         // Get supported locales from config
         $supportedLocales = config('app.supported_locales', ['en', 'bn']);
+        $locale = null;
         
         // Priority 1: Check for 'lang' query parameter
-        $locale = $request->query('lang');
-        
-        // Priority 2: Check Accept-Language header if lang parameter not provided
-        if (!$locale) {
-            $locale = $request->header('Accept-Language');
+        if ($request->query('lang')) {
+            $locale = $request->query('lang');
         }
         
-        // Priority 3: Use session locale if available
-        if (!$locale && $request->hasSession()) {
+        // Priority 2: Use session locale if available
+        elseif ($request->hasSession() && $request->session()->get('locale')) {
             $locale = $request->session()->get('locale');
+        }
+        
+        // Priority 3: Check Accept-Language header
+        elseif ($request->header('Accept-Language')) {
+            $locale = $request->header('Accept-Language');
         }
         
         // Clean up locale string (remove region codes like en-US -> en)
@@ -37,9 +40,9 @@ class SetLocale
             $locale = strtolower(substr($locale, 0, 2));
         }
         
-        // Validate locale is supported, otherwise use default
-        if (!in_array($locale, $supportedLocales)) {
-            $locale = config('app.locale', 'en');
+        // Validate locale is supported, otherwise use default from config
+        if (!$locale || !in_array($locale, $supportedLocales)) {
+            $locale = config('app.locale', 'bn');
         }
         
         // Set the application locale

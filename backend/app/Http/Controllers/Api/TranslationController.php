@@ -66,7 +66,7 @@ class TranslationController extends Controller
      */
     private function loadTranslations(string $locale): array
     {
-        $filePath = resource_path("lang/{$locale}/common.json");
+        $filePath = resource_path("lang/{$locale}.json");
         
         if (!File::exists($filePath)) {
             return [];
